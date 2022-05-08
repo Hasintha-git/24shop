@@ -1,0 +1,76 @@
+@media only screen and (max-width: 768px) {
+    .searchTxt {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+.div {
+   width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    // border-radius: 10px;
+    // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.searchBox {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.box1 {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-bottom-left-radius: 20px;
+}
+.box2 {
+    width: 25%;
+    height: 100%;   
+    background-color: #00b712;
+    background-image: linear-gradient(315deg, #00b712 0%, #5aff15 85%);
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.box2:hover {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
+}
+
+.searchTxtBox {
+    width: 70%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.input{
+    width: 100%;
+    border: none;
+
+}
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+.searchTxt {
+    color: white;
+    font-size: 12px;
+}

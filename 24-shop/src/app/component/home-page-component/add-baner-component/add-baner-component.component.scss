@@ -1,0 +1,308 @@
+.divBox {
+
+    background-color: white;
+    display: flex;
+    height: 80vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    margin-bottom: 20px;
+    // padding: 10px;
+}
+
+.side1{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .imgSize {
+    width: 70px;
+  }
+  .side1Body {
+    // background-color: #000000;
+    width: 60%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    .shopName {
+      font-size: 24px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .welcome {
+      font-size: 44px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .shopbtn {
+      background-color: #00b712;
+      background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+      width: 100px;
+      height: 37px;
+      border: none;
+      color: white;
+      border-radius: 20px;
+    }
+    .shopbtn:hover {
+      background-color: #00b712;
+      background-image: linear-gradient(315deg, #5aff15 0%, #00b712 74%);
+      width: 100px;
+      height: 37px;
+      border: none;
+      color: white;
+      border-radius: 20px;
+    }
+    .flexBox {
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      display: flex;
+      // background-color: #ed1c94;
+    }
+    .flexBoxFree {
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      display: flex;
+      // background-color: #ed1c94;
+    }
+  }
+}
+// side1 responsive
+@media only screen and (max-width: 1169px) {
+  .side1{
+    // background-color: #ed1c94;
+    .side1Body {
+      // background-color: #000000;
+      width: 90%;
+      height: 80%;
+      // background-color: #000000;
+      .shopName {
+        font-size: 24px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .welcome {
+        font-size: 28px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      }
+      .shopbtn {
+        background-color: #00b712;
+        background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+        width: 100px;
+        height: 33px;
+        border: none;
+        color: white;
+        border-radius: 20px;
+      }
+      .flexBox {
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        display: flex;
+        z-index: 99;
+        // background-color: #ed1c94;
+      }
+      .flexBoxFree {
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        display: flex;
+        // background-color: #ed1c94;
+      }
+      
+    }
+  }
+  .slide {
+    position: absolute;
+    width: 80%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+  
+
+}
+
+.side2{
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: transparent;
+  // background-color: rgb(45, 12, 163);
+}
+
+.bannerImg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+// side2 responsive
+@media only screen and (max-width: 768px) {
+    .divBox {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+     
+
+
+  }
+
+
+//   slide ******************
+.slider {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+  
+  .arrow {
+    position: absolute;
+    z-index: 1002;
+    display: block;
+    top: 50%;
+    margin-top: -35px;
+    width: 36px;
+    height: 71px;
+    outline: none !important;
+    cursor: pointer;
+    // background: url(../assets/blank.gif) no-repeat;
+    border: none;
+  }
+  
+  .arrow.prev {
+    opacity: 0.2;
+    left: 20px;
+    font-size: 50px;
+    // background-image: url(../assets/paddle_prev_999.png);
+    transition: 0.2s linear all;
+  }
+  
+  .arrow.next {
+    opacity: 0.2;
+    right: 20px;
+    font-size: 50px;
+
+    // background-image: url(../assets/paddle_next_999.png);
+    transition: 0.2s linear all;
+  }
+  
+  .arrow.prev:hover {
+    opacity: 1;
+    // background-image: url(../assets/paddle_prev_fff.png);
+  }
+  
+  .arrow.next:hover {
+    opacity: 1;
+    // background-image: url(../assets/paddle_next_fff.png);
+  }
+
+  
+// ** social media ******
+.social-links {
+  display: flex;
+  // top: 420px;
+  // position: absolute;
+  // left: 100px;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+  margin: 0 10px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s;
+}
+
+.social-links a .fab {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  z-index: 10;
+  transition: color 0.5s;
+}
+
+.social-links a::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: -90px;
+  left: 0;
+  background-color: #00b712;
+  background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+  position: absolute;
+  transition: 0.5s;
+}
+
+.social-links a:hover::after {
+  top: 0;
+}
+
+.social-links a:hover .fab {
+  color: #fff;
+}
+
+.social-links a:hover {
+  transform: translateY(-10px);
+}
+.btn-car-selected {
+  background: linear-gradient(-45deg, #ed1c94, #ffec17);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+
+  &:hover{
+    background: linear-gradient(45deg, #ed1c94, #ffec17);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 14px;
+  }
+  .social-links a {
+    width: 25px;
+    height: 25px;
+  }
+  .social-links a .fab {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .imgSize {
+    display: none;
+  }
+}

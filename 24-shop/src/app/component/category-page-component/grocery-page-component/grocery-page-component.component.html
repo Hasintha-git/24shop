@@ -1,0 +1,21 @@
+<!-- <div class="content"> -->
+    <div fxLayout="row wrap"  fxLayout.lt-sm="column wrap"  fxLayoutAlign="center" fxLayoutGap="10px">
+      <div fxFlex="20%"  *ngFor="let num of currentData">
+        <mat-card class="mat-elevation-z4 card" >
+          <mat-card-header>
+            <div class="addBtn">
+              <p>{{status}}</p>
+            </div>
+          </mat-card-header>
+          <img  mat-card-image class="imgEffect" src={{imgurl}}>
+          <mat-card-actions>
+            <mat-card-title>Category Name {{num}}</mat-card-title>
+            <mat-card-subtitle >RS: {{ price}} <span class="disTxt">RS: {{oldprice}}</span></mat-card-subtitle>
+            <button class="btnAddCart" mat-button>  <mat-icon class="icnCart">shopping_cart</mat-icon>Add to Cart</button>
+          </mat-card-actions>
+        </mat-card>
+
+  
+      </div>
+    </div>
+    <!-- </div> -->
