@@ -1,23 +1,14 @@
-<div class="body">
-    <mat-tab-group  dynamicHeight >
-
-        <mat-tab label="grocery"  routerLink="grocery"> 
-          <app-grocery-page-component></app-grocery-page-component>
-        </mat-tab>
-        <mat-tab label="beverages"  routerLink="beverages">
-          <app-beverages-page-component></app-beverages-page-component>
-        </mat-tab>
-        <mat-tab label="household"  routerLink="household"> 
-          <app-household-page-component></app-household-page-component>
-        </mat-tab>
-        <mat-tab label="chilled"  routerLink="chilled"> 
-          <app-chilled-page-component></app-chilled-page-component>
-        </mat-tab>
-        <mat-tab label="frozen-food"  routerLink="frozen-food"> 
-          <app-frozen-food-page-component></app-frozen-food-page-component>  
-        </mat-tab>
-    
-      </mat-tab-group>
-      <br>
-      <router-outlet></router-outlet>
+<div style="justify-content: center;display: flex;align-items: center;;">
+  <nav mat-tab-nav-bar >
+    <a mat-tab-link 
+    *ngFor="let link of navLinks"
+    [routerLink]="link.link"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+    {{link.label}}
+    </a>
+    </nav>
 </div>
+
+
+  <router-outlet></router-outlet>

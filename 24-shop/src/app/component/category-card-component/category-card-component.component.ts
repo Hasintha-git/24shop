@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router'; // import router from angular router
 
 @Component({
   selector: 'app-category-card-component',
@@ -8,12 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class CategoryCardComponentComponent implements OnInit {
   currentData:Array<any>=[];
   imgurl:any;
+  fxFlex:any;
 
-  constructor() { 
-    this.currentData=[1,2,3,4,5,6,7,8,9,10];
-    this.imgurl="https://www.pngmart.com/files/3/Vegetable-PNG-Photos.png"
+  constructor(private route:Router) { 
+    this.currentData=['grocery','beverages','household','chilled','frozen-food'];
+    this.imgurl="../../../assets/categoryIcons/vegiCat.png";
+    this.fxFlex="18%"
   }
   ngOnInit(): void {
+  }
+  goToCategory(num:any){
+    this.route.navigate(['/category/'+num])
+    console.log(num+"hi");
+    
   }
 
 }

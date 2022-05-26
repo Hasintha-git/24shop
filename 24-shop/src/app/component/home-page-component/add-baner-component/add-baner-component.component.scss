@@ -8,7 +8,6 @@
     align-items: center;
     margin: 0;
     padding: 0;
-    flex-direction: row;
     margin-bottom: 20px;
     // padding: 10px;
 }
@@ -41,21 +40,19 @@
     }
     .shopbtn {
       background-color: #00b712;
-      background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
-      width: 100px;
-      height: 37px;
-      border: none;
-      color: white;
-      border-radius: 20px;
-    }
-    .shopbtn:hover {
-      background-color: #00b712;
       background-image: linear-gradient(315deg, #5aff15 0%, #00b712 74%);
       width: 100px;
       height: 37px;
       border: none;
       color: white;
-      border-radius: 20px;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .shopbtn:hover {
+      background-color: #00b712;
+      background-image: linear-gradient(315deg, #5aff15 0%, #00b712 74%);
     }
     .flexBox {
       flex: 1;
@@ -306,3 +303,5 @@
     display: none;
   }
 }
+
+.ng-tmp {background-color: transparent;}

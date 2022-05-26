@@ -1,0 +1,26 @@
+.bannerBody {
+    // background-color: gray;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 300px;
+    overflow: hidden;
+    border-top: 1px solid #fddb00;
+    border-bottom: 1px solid #fddb00;
+    // box-shadow: 0 0 20px 10px rgba(145, 235, 2, 0.2);
+}
+.bannerImg {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+@media only screen and (max-width: 1169px) {
+    .bannerBody {
+        width: 100%;
+        overflow: hidden;
+        height: auto;
+        border-top: none;
+        border-bottom: none;
+        // box-shadow: 0 0 20px 10px rgba(145, 235, 2, 0.2);
+    }
+}

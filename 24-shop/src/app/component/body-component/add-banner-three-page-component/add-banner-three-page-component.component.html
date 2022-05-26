@@ -1,0 +1,16 @@
+<div class="bannerBody">
+    <!-- <img src="../../../../assets/adds/banner.png" class="bannerImg"> -->
+    <div class="container ">
+        <div [@slideAnimation]="currentIndex" class="ng-tmp">
+          <ng-template ngFor [ngForOf]="slides" let-slide let-i="index" class="ng-tmp">
+            <img class="slide slide-animation nonDraggableImage" *ngIf="isCurrentSlideIndex(i)" (swiperight)="nextSlide()"
+              (swipeleft)="prevSlide()" [src]="slide.image">
+          </ng-template>
+        </div>
+  
+  
+        <mat-icon class="arrow prev" (click)="nextSlide()">keyboard_arrow_left</mat-icon>
+  
+        <mat-icon class="arrow next" (click)="prevSlide()">keyboard_arrow_right</mat-icon>
+      </div>
+</div>

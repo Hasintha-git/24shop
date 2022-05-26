@@ -1,0 +1,82 @@
+<div class="deliBg">
+    <div class="div1">
+        <div class="box">
+          <mat-icon class="icn">local_shipping</mat-icon>
+          <p class="txt">Fast Delivery</p>
+        </div>
+        <div class="box">
+          <mat-icon class="icn">more</mat-icon>
+          <p class="txt">More Details</p>
+        </div>
+        <div class="box">
+          <mat-icon class="icn">person_pin_circle</mat-icon>
+          <p class="txt">Return Accept & read more</p>
+        </div>
+    </div>
+    <div class="div2">
+        <div class="divHeader">
+          <h1>Delivery Policy</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque laboriosam velit alias ullam sequi commodi quo, rerum beatae accusantium corrupti sint enim pariatur praesentium? Atque natus sapiente ipsam id consectetur!</p>
+          <h2>Delivery cost by near town</h2>
+
+        </div>
+        <div class="divBody">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> City </th>
+                  <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef> No of KM </th>
+                    <td mat-cell *matCellDef="let element"> {{element.km}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="weight">
+                  <th mat-header-cell *matHeaderCellDef> Price </th>
+                  <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+                </ng-container>
+              
+        
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              
+              
+        </div>
+    </div>
+    <div class="div3">
+      <div class="box">
+        <mat-icon class="icn">attach_money</mat-icon>
+        <p class="txt">Cash On Delivery</p>
+      </div>
+        <div class="box">
+          <mat-icon class="icn">business</mat-icon>
+          <p class="txt">24 Hours Deliver</p>
+        </div>
+        <div class="box">
+          <mat-icon class="icn">security</mat-icon>
+          <p class="txt">Our Privacy Policy</p>
+        </div>
+    </div>
+
+
+
+</div>
+<div class="div4">
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, at ab. Laborum adipisci voluptatibus voluptatem voluptas soluta quo. Modi, autem! Ipsum eveniet ratione fugit. Illum rerum tenetur quia minus sit.</p>
+</div>

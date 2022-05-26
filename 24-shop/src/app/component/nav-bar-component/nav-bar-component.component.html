@@ -6,28 +6,36 @@
 
 
 <div class="div2">      
-    <!-- <div fxHide.gt-xs> 
-        <button mat-icon-button>
 
-            <mat-icon>menu</mat-icon>
-        </button>
-    </div> -->
-    <!-- <mat-icon class="icnCart">shopping_cart</mat-icon> -->
-    <a mat-button routerLink="/home">Home</a>
-    <!-- <mat-icon class="icnCart">shopping_cart</mat-icon> -->
-    <a mat-button routerLink="/category">category</a>
-    <!-- <mat-icon class="icnCart">shopping_cart</mat-icon> -->
-    <a mat-button routerLink="/product">product</a>
-    <!-- <mat-icon class="icnCart">shopping_cart</mat-icon> -->
-    <a mat-button routerLink="/contact">contact</a>
-    <!-- <mat-icon class="icnCart">shopping_cart</mat-icon> -->
-    <a mat-button routerLink="/about">about</a>
+    <div class="div2-sub">
+        <mat-icon class="icn">home</mat-icon>
+        <a mat-button routerLink="/home">Home</a>
+    </div>
+
+    <div class="div2-sub">
+        <mat-icon class="icn">security</mat-icon>
+        <a mat-button routerLink="/privacy">privacy</a>
+    </div>
+
+    <div class="div2-sub">
+        <mat-icon class="icn">room</mat-icon>
+        <a mat-button routerLink="/delivery">delivery</a>
+    </div>
+
+    <div class="div2-sub">
+        <mat-icon class="icn">phone</mat-icon>
+        <a mat-button routerLink="/contact">contact</a>
+    </div>
+    
+    <div class="div2-sub">
+        <mat-icon class="icn">info</mat-icon>
+        <a mat-button routerLink="/about">about</a>
+    </div>
 </div>
-
+ 
 
 <div class="div3">
   <span class="priceTag">0.00</span>
-      <mat-icon class="icnCart">shopping_cart</mat-icon>
-
+      <mat-icon class="icnCart" [routerLink]="'/order'">shopping_cart</mat-icon>
 </div>
 </mat-toolbar>
