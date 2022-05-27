@@ -2,6 +2,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { slideAnimation } from '../add-baner-component/side.animation';
 import {interval} from 'rxjs';
+
 export interface Tile {
   color: string;
   cols: number;
@@ -65,4 +66,6 @@ export class AddBanerComponentComponent implements OnInit {
     {text: 'One', cols: 3, rows: 3, color: 'lightblue'},
   ];
 
+
 }
+

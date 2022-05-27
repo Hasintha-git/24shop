@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./privacy-page-component.component.scss']
 })
 export class PrivacyPageComponentComponent implements OnInit {
+  imgUrl:any;
 
-  constructor() { }
+  constructor() {
+      this.imgUrl="../../../assets/adds/privacy.png";
+   }
 
   ngOnInit(): void {
   }

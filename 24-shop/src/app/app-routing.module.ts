@@ -13,6 +13,7 @@ import { OrderAddPageComponentComponent } from './component/order-add-page-compo
 import { SearchResultPageComponentComponent } from './component/search-result-page-component/search-result-page-component.component';
 import { PrivacyPageComponentComponent } from './component/privacy-page-component/privacy-page-component.component';
 import { DeliveryPageComponentComponent } from './component/delivery-page-component/delivery-page-component.component';
+import { LoginPageComponentComponent } from './component/login-page-component/login-page-component.component'
 
 const routes: Routes = [ 
   {path:'',redirectTo:'home',pathMatch:'full'},

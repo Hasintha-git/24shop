@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactPageComponentComponent implements OnInit {
 
-  constructor() { }
+  imgUrl:any;
 
+  constructor() {
+      this.imgUrl="../../../assets/adds/contact.png";
+   }
   ngOnInit(): void {
   }
 

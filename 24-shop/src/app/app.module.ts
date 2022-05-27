@@ -41,6 +41,14 @@ import { AddBannerTwoPageComponentComponent } from './component/home-page-compon
 import { AddBannerThreePageComponentComponent } from './component/body-component/add-banner-three-page-component/add-banner-three-page-component.component';
 import { PrivacyPageComponentComponent } from './component/privacy-page-component/privacy-page-component.component';
 import { DeliveryPageComponentComponent } from './component/delivery-page-component/delivery-page-component.component';
+import { LoginPageComponentComponent } from './component/login-page-component/login-page-component.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { NgToastModule } from 'ng-angular-popup';
+import {MatStepperModule} from '@angular/material/stepper';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -67,6 +75,7 @@ import { DeliveryPageComponentComponent } from './component/delivery-page-compon
     AddBannerThreePageComponentComponent,
     PrivacyPageComponentComponent,
     DeliveryPageComponentComponent,
+    LoginPageComponentComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -85,7 +94,15 @@ import { DeliveryPageComponentComponent } from './component/delivery-page-compon
     AngularFireModule.initializeApp(environment.firebaseConfig),
     MatPaginatorModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatMenuModule,
+    NgToastModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatDialogModule 
     
 
   ],

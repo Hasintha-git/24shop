@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginPageComponentComponent } from '../../component/login-page-component/login-page-component.component'
 
 @Component({
   selector: 'app-home-page-component',
@@ -7,13 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponentComponent implements OnInit {
 
-  constructor() { }
-  
+  constructor(public dialog: MatDialog) {
+    setTimeout(() => {
+      this.openDialog()
+    }, 10000);
+  }
+
   image: string | undefined;
-  luxury: string|undefined;
+  luxury: string | undefined;
 
   ngOnInit(): void {
-    this.luxury="/cars/luxury-cars";
+    this.luxury = "/cars/luxury-cars";
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(LoginPageComponentComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }
