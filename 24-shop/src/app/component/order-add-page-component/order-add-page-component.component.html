@@ -4,31 +4,31 @@
         <div class="imgBox">
             <img class="img" src="../../../assets/banners/spicy.png" alt="">
         </div>
-        <div class="boxService">
+        <!-- <div class="boxService">
 
-        </div>
+        </div> -->
     </div>
     <div class="div-2">
         <div class="boxAdd">
-            <p class="txtTitle">Hello dwuj hwdb</p>
-            <p class="iNo">item no</p>
+            <p class="txtTitle">{{title}}</p>
+            <p class="iNo">{{itemNo}}</p>
         </div>
 
         <div class="boxDes">
-            <p class="txtDes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem odit ipsa minus quibusdam animi amet consectetur voluptas! Accusamus odit eaque explicabo vel fugiat nemo sequi dolor. Delectus deserunt similique accusamus.</p>
+            <p class="txtDes">{{description}}</p>
         </div>
         <div class="boxPri">
-            <p class="txtPrice">756.50</p>
+            <p class="txtPrice">LKR {{price}}.00</p>
         </div>
         <div class="boxQty">
             <div class="qtyDiv">
-                <div class="boxIcn">
+                <div class="boxIcn" (click)="min()">
                     <mat-icon>remove</mat-icon>
                 </div>
                 <div class="boxIcn2">
-                    <p class="txtQty">0</p>
+                    <label class="txtQ">{{qtyCount}}</label>
                 </div>
-                <div class="boxIcn">
+                <div class="boxIcn" (click)="plus()">
                     <mat-icon>add</mat-icon>
                 </div>
             </div>

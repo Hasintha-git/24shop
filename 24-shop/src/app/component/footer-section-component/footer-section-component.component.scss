@@ -7,8 +7,7 @@
 }
 .divBox {
     width: 100%;
-    background-color: #00b712;
-    background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -144,60 +143,6 @@
     
     }
   }
-
-
-//   @mixin striped-bg($side: 'right') {
-
-//     @if $side == 'right' {
-//       background-image: linear-gradient(
-//           110deg,
-//           transparent 75%, 
-//           rgba(255, 255, 255, 0.1) 75%, 
-//           rgba(255, 255, 255, 0.1) 81.5%, 
-//           rgba(255, 255, 255, 0.2) 81.5%, 
-//           rgba(255, 255, 255, 0.2)
-//       );
-//       background-position: bottom right;
-//       background-repeat: no-repeat;
-//     }
-//     @elseif $side == 'left' {
-//       background-image: linear-gradient(
-//         110deg,
-//         rgba(255, 255, 255, 0.2) 30%,
-//         rgba(255, 255, 255, 0.2) 31.5%,
-//         rgba(255, 255, 255, 0.1) 31.5%,
-//         rgba(255, 255, 255, 0.1) 38%,
-//         transparent 14%,
-//         transparent
-//       );
-//       background-position: top left;
-//       background-repeat: no-repeat;
-//     }
-//     @elseif $side == 'both' {
-//       background-image:
-//       linear-gradient(
-//         110deg,
-//         rgba(255, 255, 255, 0.2) 16%,
-//         rgba(255, 255, 255, 0.2) 17%,
-//         rgba(255, 255, 255, 0.1) 17%,
-//         rgba(255, 255, 255, 0.1) 23%, 
-//         transparent 8.5%, 
-//         transparent 78%,
-//         rgba(255, 255, 255, 0.1) 78%,
-//         rgba(255, 255, 255, 0.1) 84%,
-//         rgba(255, 255, 255, 0.2) 84%,
-//         rgba(255, 255, 255, 0.2)
-//       );
-//       background-position: top left;
-//       background-repeat: no-repeat;
-//       background-size: 100% auto;
-//     }
-//     @else {
-//       @error "This mixin only supports the following sides: left, right, and both.";
-//     }
-  
-//   }
-  
   
   .pwp-list-group {
     background-color: #00b712;
@@ -217,7 +162,8 @@
 //   .striped-bg-both  { @include striped-bg(both); }
 
 .footerEnd {
-    background-color: #181818;
+    background-color: #00b712;
+    background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
     width: 100%;
     height: 50px;
     display: flex;

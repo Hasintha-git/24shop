@@ -49,6 +49,8 @@ import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
+import { OrderConfirmPageComponentComponent } from './component/order-confirm-page-component/order-confirm-page-component.component';
+import { SearchCartComponentComponent } from './component/search-result-page-component/search-cart-component/search-cart-component.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +78,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     PrivacyPageComponentComponent,
     DeliveryPageComponentComponent,
     LoginPageComponentComponent,
+    OrderConfirmPageComponentComponent,
+    SearchCartComponentComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

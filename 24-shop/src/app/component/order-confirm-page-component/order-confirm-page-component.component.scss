@@ -12,103 +12,36 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    flex: 1;
+    flex: 2;
     flex-direction: column;
-
-    .boxService {
+    .tblHeader {
         width:  90%;
-        height: 50px;
-        border: 1px solid red;
-        margin: 20px
+        height: 40px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background-color: #00b712;
+        background-image: linear-gradient(315deg, #00b712 0%, #5aff15 44%);
+        // border-bottom-left-radius: 10px;
+        // border-top-right-radius: 10px;
+        margin: 10px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.1); 
     }
-}
-.div-2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    flex: 1;
-    flex-direction: column;
-    text-align: start;
-
-    .boxAdd {
+    .tblFooter {
         width:  90%;
-        height: 70px;
-        .txtTitle {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .iNo {
-            font-size: 14px;
-            color: gray;
-        }
-    }
-    .boxPri {
-        width:  90%;
-        height: 50px;
-        .txtPrice {
-            font-size: 28px;
-            font-weight: bold   ;
-        }
-    }
-
-    .boxDes{
-        width:  90%;
-        height: auto;
-        .txtDes {
-            font-size: 12px;
-        }
-    }
-    .boxQty {
-        width:  90%;
-        height: 50px;
-        .qtyDiv {
-            width: 200px;
-            height: 33px;
-            display: flex;
-            flex-direction: row;
-            .boxIcn {
-                width: 60px;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                border-top-left-radius: 10px;
-                border-bottom-right-radius: 10px;
-                box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
-
-                &:hover {
-                    background-color: #5aff15;
-                    cursor: pointer;
-                }
-            }
-            .boxIcn2 {
-                width: 80px;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-
-                .txtQ {
-                    display: flex;
-                    font-weight: bold;
-                    font-size: 18px;
-                    text-align: center;
-                }
-            }
-        }
-    }
-    .boxBtn {
-        width:  90%;
-        height: 50px; 
-        .btnAdCart {
-            width: 200px;
+        height: 40px;
+        display: flex;
+        text-align: center;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 10px;
+        .btnPurchase {
+            width: 150px;
             height: 33px;
             border-top-left-radius: 20px;
             border-bottom-right-radius: 20px;
-            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
             background-color: #00b712;
             background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
             &:hover {
@@ -117,7 +50,8 @@
         }
     }
 }
-.div-3 {
+
+.div-2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,8 +85,26 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         border-bottom-right-radius: 20px;
+        p {
+            font-weight: 600;
+        }
+        .spanTxt {
+            position: absolute;
+            right: 70px;
+            font-weight: 600;
+        }
+        .spanTxtTotal {
+            position: absolute;
+            right: 70px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .hr {
+            border: 1px solid black;
+            width: 100%;
+        }
     }
     .boxPurchase {
         width:  90%;
@@ -175,18 +127,6 @@
     }
 }
 
-.imgBox {
-    width: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-
-    .img {
-        width: 300px;
-        height: 100%;
-    }
-}
 @media only screen and (max-width: 956px) {
     .main-div {
         flex-direction: column;
@@ -199,18 +139,6 @@
     .div-2 {
         height: 50%;
         width: 100%;
-        text-align: center;
-        .boxQty {
-            width:  90%;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-    .div-3 {
-        height: 50%;
-        width: 100%;
     }
     .imgBox {
         height: auto;
@@ -221,3 +149,14 @@
         }
     }
 }
+.example-container {
+    height: 400px;
+    width: 90%;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  

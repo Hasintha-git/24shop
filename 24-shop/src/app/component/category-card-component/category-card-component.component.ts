@@ -13,7 +13,7 @@ export class CategoryCardComponentComponent implements OnInit {
 
   constructor(private route:Router) { 
     this.currentData=['grocery','beverages','household','chilled','frozen-food'];
-    this.imgurl="../../../assets/categoryIcons/vegiCat.png";
+    this.imgurl="../../../assets/categoryIcons/vegi.png";
     this.fxFlex="18%"
   }
   ngOnInit(): void {
