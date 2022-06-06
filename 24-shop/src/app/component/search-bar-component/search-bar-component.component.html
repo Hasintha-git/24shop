@@ -8,15 +8,18 @@
          
                 </mat-form-field>
             </form> -->
-            <input type="text" class="input" autofocus placeholder="search 24 shop">
+
+                <input type="text" class="input" [(ngModel)]="search" (click)="counter()" (keypress)="keyPress($event)" autofocus placeholder="search 24 shop">
+
+
             </div>
         </div>
-        <div class="box2"  [routerLink]="'/search'">
+        <div class="box2" (click)="loadItems()">
             <span class="searchTxt">Search Product</span>
             <mat-icon matSuffix style="font-size: 1.2em;color: #fff;">search</mat-icon>
         </div>
     </div>
-       
+
    
 </mat-toolbar>
 

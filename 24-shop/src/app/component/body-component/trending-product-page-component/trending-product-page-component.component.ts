@@ -2,6 +2,9 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { slideAnimation } from '../trending-product-page-component/side.animation';
 import {interval} from 'rxjs';
+import { ItemServiceService } from 'src/app/services/items/item-service.service';
+import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 // import { Router } from '@angular/router';
 
 export interface Tile {
@@ -32,14 +35,11 @@ export class TrendingProductPageComponentComponent implements OnInit {
   status:any;
   price:any;
   oldprice:any;
+  pageSlice:Array<any>=[];
 
-  constructor() { 
-    this.currentData=[1,2,3,4,5];
-    this.price='44';
-    this.oldprice='48';
-    this.imgurl="../../assets/categoryIcons/vegi.png";
-    this.status="New";
+  constructor(private itemService:ItemServiceService,private route:Router) { 
     this.preloadImages();
+    this.loadTrending()
   }
 
   preloadImages() {
@@ -76,5 +76,37 @@ export class TrendingProductPageComponentComponent implements OnInit {
     {text: 'One', cols: 3, rows: 3, color: 'lightblue'},
   ];
 
+  onPageChange(event: PageEvent) {
+    console.log(event);
+    
+    const startIndex=event.pageIndex * event.pageSize;
+    let endIndex = startIndex + event.pageSize;
+    if(endIndex>this.currentData.length) {
+      endIndex = this.currentData.length;
+    }
+    this.pageSlice =this.currentData.slice(startIndex,endIndex)
+  }
 
+  loadTrending(){
+    this.itemService.getTrending(10).then((res)=> {
+      console.log(res,"size");
+      
+      for (let i = 0; i < res.size; i++) {
+        
+        this.pageSlice[i]=res.docs[i].data();
+        console.log(this.pageSlice[i],"res");
+      }
+
+
+    // console.log(res,"res");
+    
+  })
+  
+  }
+
+  orderSet(list:any) {
+    console.log(list);
+    sessionStorage.setItem('buyItem',list.title)
+    this.route.navigate(['/order'])
+  }
 }

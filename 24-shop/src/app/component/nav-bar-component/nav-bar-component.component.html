@@ -9,32 +9,32 @@
 
     <div class="div2-sub">
         <mat-icon class="icn">home</mat-icon>
-        <a mat-button routerLink="/home">Home</a>
+        <a mat-button routerLinkActive="activated-route" routerLink="/home">Home</a>
     </div>
 
     <div class="div2-sub">
         <mat-icon class="icn">security</mat-icon>
-        <a mat-button routerLink="/privacy">privacy</a>
+        <a mat-button routerLinkActive="activated-route" routerLink="/privacy">privacy</a>
     </div>
 
     <div class="div2-sub">
         <mat-icon class="icn">room</mat-icon>
-        <a mat-button routerLink="/delivery">delivery</a>
+        <a mat-button routerLinkActive="activated-route" routerLink="/delivery">delivery</a>
     </div>
 
     <div class="div2-sub">
         <mat-icon class="icn">phone</mat-icon>
-        <a mat-button routerLink="/contact">contact</a>
+        <a mat-button routerLinkActive="activated-route" routerLink="/contact">contact</a>
     </div>
     
     <div class="div2-sub">
         <mat-icon class="icn">info</mat-icon>
-        <a mat-button routerLink="/about">about</a>
+        <a mat-button routerLinkActive="activated-route" routerLink="/about">about</a>
     </div>
 </div>
  
 
 <div class="div3">
-      <mat-icon class="icnCart" [routerLink]="'/orderConfirm'">shopping_cart</mat-icon>
+      <mat-icon routerLinkActive="activated-route" class="icnCart" [routerLink]="'/orderConfirm'">shopping_cart</mat-icon>
 </div>
 </mat-toolbar>

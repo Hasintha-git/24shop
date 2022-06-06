@@ -164,6 +164,18 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": true,
+            "ssr": false,
+            "browserTarget": "24-shop:build:production",
+            "firebaseProject": "shop-web-b29c1",
+            "firebaseHostingSite": "shop-web-b29c1",
+            "serverTarget": "24-shop:server:production",
+            "prerenderTarget": "24-shop:prerender:production"
+          }
         }
       }
     }

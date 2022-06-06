@@ -1,0 +1,32 @@
+<mat-dialog-content class="mat-typography">
+    <div class="close">
+      <mat-icon mat-dialog-close class="icnCloss" >close</mat-icon>
+  
+    </div>
+  
+    <div class="login-wrapper" fxLayout="column" fxLayoutAlign="center center">
+  
+      <mat-card-header class="header">
+        <mat-card-title>Hey {{displayName}}</mat-card-title>
+      </mat-card-header>
+      <form class="example-form" [formGroup]="signupForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input type="text" autocomplete="off" matInput formControlName="userName" placeholder="User Name" id="userName"  ngModel name="userName">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input type="text" autocomplete="off" matInput formControlName="address" placeholder="Address" id="adress" ngModel name="adress">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input type="text" autocomplete="off" matInput formControlName="phone" placeholder="Phone" id="phone" ngModel name="phone">
+          </mat-form-field>
+        </mat-card-content>
+        <button mat-button class="btnRegister">Complete</button>
+
+
+      </form>  
+  
+  </div>
+  </mat-dialog-content>
+      
+  

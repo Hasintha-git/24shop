@@ -12,7 +12,7 @@ export class CategoryPageComponentComponent implements OnInit {
   navLinks: any[];
   activeLinkIndex = -1; 
   constructor(private router: Router) {
-    this.router.navigate(['/', 'grocery']);
+    // this.router.navigate(['/', 'grocery']);
     this.navLinks = [
         {
             label: 'grocery',

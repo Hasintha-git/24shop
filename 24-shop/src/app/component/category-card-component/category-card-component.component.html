@@ -5,10 +5,10 @@
       Hello
     </mat-card-header> -->
     <div class="imgEffect">
-      <img mat-card-image class="img" src={{imgurl}} (click)="goToCategory(num)">
+      <img mat-card-avatar class="img" src={{num.imgUrl}} (click)="goToCategory(num.title)">
     </div>
     <mat-card-actions>
-      <p class="btnAddCart" mat-button>{{num}}</p>
+      <p class="btnAddCart" mat-button>{{num.title}}</p>
     </mat-card-actions>
 
   </div>

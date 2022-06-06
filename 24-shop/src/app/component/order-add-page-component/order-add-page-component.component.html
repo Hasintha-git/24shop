@@ -1,21 +1,21 @@
 <app-search-bar-component></app-search-bar-component>
-<div class="main-div">
+<div class="main-div"  *ngFor="let num of currentData"> 
     <div class="div-1">
         <div class="imgBox">
-            <img class="img" src="../../../assets/banners/spicy.png" alt="">
+            <img class="img" src="{{num.imgUrl}}" alt="">
         </div>
         <!-- <div class="boxService">
 
         </div> -->
     </div>
-    <div class="div-2">
+    <div class="div-2"  >
         <div class="boxAdd">
-            <p class="txtTitle">{{title}}</p>
-            <p class="iNo">{{itemNo}}</p>
+            <p class="txtTitle">{{num.title}}</p>
+            <p class="iNo">{{num.status}}</p>
         </div>
 
         <div class="boxDes">
-            <p class="txtDes">{{description}}</p>
+            <p class="txtDes">{{num.description}}</p>
         </div>
         <div class="boxPri">
             <p class="txtPrice">LKR {{price}}.00</p>
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="boxBtn">
-            <button mat-button class="btnAdCart">Add to Cart</button>
+            <button mat-button class="btnAdCart" (click)="addtoCart(num)">Add to Cart</button>
         </div>
     </div>
     <div class="div-3">

@@ -28,21 +28,17 @@ mat-card-header {
   // border: 2px solid #5aff15;
   width: 180px;
   height: 180px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 100%;
   overflow: hidden;
-  background-color: white;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   &:hover {
-      box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
-
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+    cursor: pointer;
   }
 }
 
 .img {
-  width: 80%;
-  display: flex;
+  width: 100%;
+  height: 100%;
+
 }

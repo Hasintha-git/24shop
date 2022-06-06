@@ -35,8 +35,8 @@ export class BodyComponentComponent implements OnInit {
 
   
   constructor() {
-    this.imgurl_1="../../assets/adds/vegi.png"
-    this.imgurl_2="../../assets/adds/ice.png"
+    // this.imgurl_1="../../assets/adds/vegi.png"
+    // this.imgurl_2="../../assets/adds/ice.png"
 
    }
 

@@ -15,6 +15,7 @@ import { PrivacyPageComponentComponent } from './component/privacy-page-componen
 import { DeliveryPageComponentComponent } from './component/delivery-page-component/delivery-page-component.component';
 import { LoginPageComponentComponent } from './component/login-page-component/login-page-component.component'
 import { OrderConfirmPageComponentComponent } from './component/order-confirm-page-component/order-confirm-page-component.component';
+import { RegisterPageComponentComponent } from './component/register-page-component/register-page-component.component';
 
 const routes: Routes = [ 
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path:'order',component:OrderAddPageComponentComponent},
   {path:'orderConfirm',component:OrderConfirmPageComponentComponent},
   {path:'search',component:SearchResultPageComponentComponent},
+  {path:'register',component:RegisterPageComponentComponent},
 ];
 
 @NgModule({

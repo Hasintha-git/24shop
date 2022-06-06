@@ -10,8 +10,13 @@
             <p>{{status}}</p>
           </div>
         </mat-card-header>
-        <img  mat-card-image class="imgEffect" src={{imgurl}}>
+        <div class="imgEffect">
+          <img  class="img" src={{num.imgUrl}}>
+
+        </div>
+ 
         <mat-card-actions >
+
           <mat-card-title>Category Name {{num}}</mat-card-title>
           <mat-card-subtitle >RS: {{ price}} <span class="disTxt">RS: {{oldprice}}</span></mat-card-subtitle>
             <button class="btnAddCart" mat-button>  <mat-icon class="icnCart">shopping_cart</mat-icon>Buy Now</button>

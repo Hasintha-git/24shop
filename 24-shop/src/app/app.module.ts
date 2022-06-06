@@ -50,7 +50,12 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import { OrderConfirmPageComponentComponent } from './component/order-confirm-page-component/order-confirm-page-component.component';
-import { SearchCartComponentComponent } from './component/search-result-page-component/search-cart-component/search-cart-component.component';
+import { RegisterPageComponentComponent } from './component/register-page-component/register-page-component.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { MoreDetailsPageComponentComponent } from './component/login-page-component/additional-data/more-details-page-component/more-details-page-component.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +84,9 @@ import { SearchCartComponentComponent } from './component/search-result-page-com
     DeliveryPageComponentComponent,
     LoginPageComponentComponent,
     OrderConfirmPageComponentComponent,
-    SearchCartComponentComponent,
+    RegisterPageComponentComponent,
+    MoreDetailsPageComponentComponent,
+    // Firestore
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -102,12 +109,15 @@ import { SearchCartComponentComponent } from './component/search-result-page-com
     MatMenuModule,
     NgToastModule,
     MatStepperModule,
-    FormsModule,
     ReactiveFormsModule,
     MatOptionModule,
+    FormsModule,
     MatSelectModule,
-    MatDialogModule 
-    
+    MatDialogModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
 
   ],
   providers: [],

@@ -1,6 +1,6 @@
 .divBox {
 
-    background-color: white;
+    background-color:transparent;
     display: flex;
     height: 80vh;
     flex-direction: row;
@@ -15,7 +15,6 @@
 .side1{
   height: 100%;
   width: 100%;
-  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +22,6 @@
     width: 70px;
   }
   .side1Body {
-    // background-color: #000000;
     width: 60%;
     height: 80%;
     justify-content: center;

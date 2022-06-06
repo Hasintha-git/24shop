@@ -6,35 +6,35 @@
 
         </div>
         <div class="example-container ">
-            <table mat-table [dataSource]="dataSource">
+          <div class="col-md-12 offset-md-0 table-wrapper-scroll-y my-custom-scrollbar" style="background: none">
+
+            <table class="table table-sm ">
+              <thead>
+                <tr>
+                  <!-- <th scope="col" class="txt-clr">Item Id</th> -->
+                  <th scope="col" class="txt-clr">Item Title</th>
+                  <th scope="col" class="txt-clr">Price</th>
+                  <th scope="col" class="txt-clr">Qty</th>
+                  <th scope="col" class="txt-clr">Sub Total</th>
           
-             <!-- item Column -->
-             <ng-container matColumnDef="item">
-                <th mat-header-cell *matHeaderCellDef> Item </th>
-                <td mat-cell *matCellDef="let element"> {{element.item}} </td>
-              </ng-container>
-            
-              <!-- price Column -->
-              <ng-container matColumnDef="price">
-                <th mat-header-cell *matHeaderCellDef> Price </th>
-                <td mat-cell *matCellDef="let element"> {{element.price}} </td>
-              </ng-container>
-            
-              <!-- qty Column -->
-              <ng-container matColumnDef="qty">
-                <th mat-header-cell *matHeaderCellDef> QTY </th>
-                <td mat-cell *matCellDef="let element"> {{element.qty}} </td>
-              </ng-container>
-            
-              <!-- subTotal Column -->
-              <ng-container matColumnDef="subTotal">
-                <th mat-header-cell *matHeaderCellDef> subTotal </th>
-                <td mat-cell *matCellDef="let element"> {{element.subTotal}} </td>
-              </ng-container>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let row of pageSlice" class="tbl-click tbl-tr-row" style="cursor: pointer" >
           
-              <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  <!-- <td #tblItemId id="tblItemId">{{row.itemId}}</td> -->
+                  <td #tblTitle id="tblTitle">{{row.title}}</td>
+                  <td #tblPrice id="tblPrice">{{row.price}}</td>
+                  <td #tblQty id="tblQty">{{row.qty}}</td>
+                  <td #tblWeight id="tblWeight">{{row.subPrice}}</td>
+
+                  <td >
+                    <mat-icon class="view-icon" matTooltip="update">delete_forever</mat-icon>
+                  </td>
+                </tr>
+              </tbody>
             </table>
+          </div>
           </div>
           <div class="tblFooter">
             <button mat-button class="btnPurchase" (click)="openWarning()">Clear Order</button>

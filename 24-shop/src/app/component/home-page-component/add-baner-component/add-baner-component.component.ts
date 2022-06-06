@@ -22,7 +22,7 @@ export class AddBanerComponentComponent implements OnInit {
   slides = [
     {image: '../../../../assets/banners/vegitable.png', description: 'Image 01'},
     // {image: '../../../../assets/banners/mixed.png', description: 'Image 02'},
-    {image: '../../../../assets/banners/iceCream.png', description: 'Image 03'},
+    {image: '../../../../assets/banners/delivery.png', description: 'Image 03'},
     {image: '../../../../assets/banners/spicy.png', description: 'Image 04'},
   ];
 

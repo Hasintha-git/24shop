@@ -1,0 +1,171 @@
+.mat-typography {
+    padding: 20px;
+    background-color: transparent !important;
+  }
+  .login-wrapper {
+    height: 100%;
+    z-index: 2000;
+  }
+  .close {
+    align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  .icnCloss {
+    position: absolute;
+  }
+  .icnCloss:hover {
+    position: absolute;
+    -webkit-animation:spin 1s linear infinite;
+    -moz-animation:spin 1s linear infinite;
+    animation:spin 1s linear reverse;
+  }
+  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+  
+  .positronx {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .box {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    float: left;
+    padding: 60px 50px 40px 50px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    z-index: 5;
+    max-width: 330px;
+  } 
+  .box.back {
+    transform: scale(.95);
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    top: -20px;
+    opacity: .8;
+    z-index: -1;
+  }
+  .box:before {
+    content: "";
+    width: 100%;
+    height: 25px;
+    border-radius: 10px;
+    position: absolute;
+    top: -10px;
+    background: rgba(255, 255, 255, .6);
+    left: 0;
+    transform: scale(.95);
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    z-index: -1;
+  }
+  .login-wrapper .example-form {
+    min-width: 80%;
+    // background-color: rebeccapurple;
+    max-width: 300px;
+    height: auto;
+    width: 100%;
+  }
+  .login-wrapper .example-full-width,
+  .login-wrapper .btn-block {
+    width: 100%;
+    height: 50px;
+  }
+  .login-wrapper mat-card-header {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-weight: 700;
+  }
+  .login-wrapper mat-card-header mat-card-title {
+    font-size: 30px;
+    margin: 0;
+  }
+  .login-wrapper .mat-card {
+    padding: 40px 70px 50px;
+  }
+  .login-wrapper .mat-stroked-button {
+    border: 1px solid currentColor;
+    line-height: 54px;
+    background: #FFF7FA;
+  }
+  .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0.8375em 0;
+  }
+  .btnLogin {
+    width: 100%;
+    height: 33px;
+    background-color: blueviolet;
+    background-image: linear-gradient(315deg, blueviolet 0%, rgb(188, 141, 231) 74%);
+  
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    &:hover {
+      background-color: blueviolet;
+      background-image: linear-gradient(315deg, rgb(188, 141, 231)  0%, blueviolet 74%);
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    
+  
+    }
+  }
+  .btnRegister {
+    width: 100%;
+    height: 33px;
+    background-color: #00b712;
+    background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    &:hover {
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+      background-color: #00b712;
+      background-image: linear-gradient(315deg, #5aff15 0%, #00b712 74%);
+    }
+  }
+  .header {
+    padding-bottom: 30px;
+  }
+  
+  .large-button__icon {
+    width: 23px;
+    height: 23px;
+  }
+  .btnGoogle {
+    width: 100%;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+  
+  }
+  .hrDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .hr {
+    width: 48%;
+    border: 1px solid gray;
+  }
+.lblMsg {
+  text-align: center;
+  color: red;
+}
