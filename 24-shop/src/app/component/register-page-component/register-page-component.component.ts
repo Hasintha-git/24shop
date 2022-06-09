@@ -58,7 +58,8 @@ export class RegisterPageComponentComponent implements OnInit {
       ),
       
       ).subscribe((res)=> {
-      alert("wrong")
+      alert("success")
+      this.router.navigate(['/home'])
     })
   }
 

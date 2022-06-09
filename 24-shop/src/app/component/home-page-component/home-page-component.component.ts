@@ -15,38 +15,13 @@ export class HomePageComponentComponent implements OnInit {
   isSignIn:any;
 
   constructor(private router:Router,public dialog: MatDialog,private aFAuth:AngularFireAuth,private authService:AuthService) {
-    this.aFAuth.onAuthStateChanged(user => {
-      if (user) {
-        // router.navigate(['/home'])
-        user.getIdToken().then(idToken => {
-          router.navigate(['/home'])
-          // console.log("sucess");
-          // let userObj ={
-          //   user: {
-          //     email:user.email
-          //   },
-          //   token:idToken
-          // }
-          
-          sessionStorage.setItem('user',JSON.stringify(user.uid))
-        })
-
-      }else{
-        console.log("else");
-        
-        setTimeout(() => {
-          console.log("time out");
-          
-          this.openDialog()
-        }, 30000);
-      }
-    })
+    
 
   }
 
 
   ngOnInit(){
-  
+    
   }
 
   openDialog() {

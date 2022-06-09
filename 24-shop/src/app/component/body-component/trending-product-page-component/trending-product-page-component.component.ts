@@ -1,6 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { slideAnimation } from '../trending-product-page-component/side.animation';
 import {interval} from 'rxjs';
 import { ItemServiceService } from 'src/app/services/items/item-service.service';
 import { PageEvent } from '@angular/material/paginator';
@@ -18,7 +17,6 @@ export interface Tile {
   selector: 'app-trending-product-page-component',
   templateUrl: './trending-product-page-component.component.html',
   styleUrls: ['./trending-product-page-component.component.scss'],
-  animations: [slideAnimation] 
 })
 export class TrendingProductPageComponentComponent implements OnInit {
 
@@ -88,13 +86,13 @@ export class TrendingProductPageComponentComponent implements OnInit {
   }
 
   loadTrending(){
-    this.itemService.getTrending(10).then((res)=> {
+    this.itemService.getTrending(2).then((res)=> {
       console.log(res,"size");
       
       for (let i = 0; i < res.size; i++) {
         
         this.pageSlice[i]=res.docs[i].data();
-        console.log(this.pageSlice[i],"res");
+        console.log(this.pageSlice[i].status,"res");
       }
 
 

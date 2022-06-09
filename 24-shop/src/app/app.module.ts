@@ -56,6 +56,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { MoreDetailsPageComponentComponent } from './component/login-page-component/additional-data/more-details-page-component/more-details-page-component.component';
+import { NotFoundPageComponentComponent } from './component/not-found-page-component/not-found-page-component.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { MoreDetailsPageComponentComponent } from './component/login-page-compon
     OrderConfirmPageComponentComponent,
     RegisterPageComponentComponent,
     MoreDetailsPageComponentComponent,
+    NotFoundPageComponentComponent,
     // Firestore
   ],
   imports: [

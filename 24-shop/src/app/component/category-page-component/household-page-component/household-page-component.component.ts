@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 import { ItemServiceService } from 'src/app/services/items/item-service.service';
 
 @Component({
@@ -8,19 +9,16 @@ import { ItemServiceService } from 'src/app/services/items/item-service.service'
   styleUrls: ['./household-page-component.component.scss']
 })
 export class HouseholdPageComponentComponent implements OnInit {
-  public currentData:any;
+  currentData:Array<any>=[];
   imgurl:any;
   status:any;
   price:any;
   oldprice:any;
   pageSlice:Array<any>=[];
 
-  constructor(private itemService:ItemServiceService) { 
-    this.currentData=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
-    this.price='94';
-    this.oldprice='48';
-    this.status="New";
-    this.pageSlice=this.currentData.slice(0,10)
+  constructor(private itemService:ItemServiceService,private route:Router) { 
+    this.loadItems()
+    // this.pageSlice=this.currentData.slice(0,10)
   }
   ngOnInit(): void {
   }
@@ -49,5 +47,11 @@ export class HouseholdPageComponentComponent implements OnInit {
     }
     
   })
+}
+
+orderSet(list:any) {
+  console.log(list);
+  sessionStorage.setItem('buyItem',list.title)
+  this.route.navigate(['/order'])
 }
 }

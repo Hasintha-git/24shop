@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 import { getAuth } from 'firebase/auth';
 import { ItemServiceService } from 'src/app/services/items/item-service.service';
 import { Toast } from '../../services/toast';
-
+import { MatDialog } from '@angular/material/dialog';
+import { LoginPageComponentComponent } from '../login-page-component/login-page-component.component';
 
 export interface PeriodicElement {
   item: string;
@@ -28,56 +30,98 @@ export interface PeriodicElement {
   styleUrls: ['./order-confirm-page-component.component.scss']
 })
 export class OrderConfirmPageComponentComponent implements OnInit {
-  total:any;
-  shipping:any;
-  fullPrice:any;
+  total: number;
+  shipping: number;
+  fullPrice: number;
 
   displayedColumns: string[] = ['item', 'price', 'qty', 'subTotal'];
   // dataSource = ELEMENT_DATA;
-  pageSlice:Array<any>=[];
-  auth:any;
-  constructor(private toast: Toast,private itemService:ItemServiceService,private angularAuth:AngularFireAuth) { 
-    this.total='4910.00';
-    this.shipping='490.00';
-    this.fullPrice='5400.00';
+  pageSlice: Array<any> = [];
+  auth: any;
+  constructor(public dialog: MatDialog,private toast: Toast,private router:Router,private itemService: ItemServiceService, private angularAuth: AngularFireAuth) {
+    this.total = 0;
+    this.shipping = 0;
+    this.fullPrice = 0;
+    console.log(this.auth);
     this.authUserSet()
-
-    setTimeout(() => {
-      this.loadCart()
-    }, 2000);
 
 
   }
 
-  
-  async authUserSet(){
-    await this.angularAuth.onAuthStateChanged(user=> {
-      console.log("hi",user?.uid);
-      this.auth=user?.uid
+  async authUserSet() {
+    await this.angularAuth.onAuthStateChanged(user => {
+      console.log("hi", user?.uid);
+      this.auth = user?.uid
       console.log(this.auth);
-      return user?.uid;
     })
   }
 
   ngOnInit(): void {
-    
+    setTimeout(() => {
+      this.loadCart()
+    }, 1000);
+    this.authUserSet()
+    setTimeout(() => {
+      this.deliveryCost()
+    }, 3000);
   }
 
-  openWarning(){
-    this.toast.openWarning("hello","hi");
+  openWarning() {
+    this.toast.openWarning("hello", "hi");
   }
 
   loadCart() {
-    
-    this.itemService.cartList(this.auth).then((res)=> {
-      console.log(res.size,"size");
+    this.itemService.cartList(this.auth).then((res) => {
+      console.log(res, "size");
       sessionStorage.removeItem("search")
       for (let i = 0; i < res.size; i++) {
-        
-        this.pageSlice[i]=res.docs[i].data();
-        console.log(this.pageSlice[i],"res");
+        this.pageSlice[i] = res.docs[i].data();
+        console.log(this.pageSlice[i].price, "res data ........");
+        this.total+=parseInt(this.pageSlice[i].price);
+        this.fullPrice=this.total+this.shipping
+    
       }
-      
     })
+  }
+
+  close(row: any) {
+    console.log(row);
+    this.itemService.removeCart(row, this.auth).then((res) => {
+      window.location.reload()
+    })
+  }
+
+  clearCart() {
+    this.itemService.clearCart(this.auth).then((res) => {
+      window.location.reload()
+    })
+  }
+
+  deliveryCost() {
+    this.itemService.getdeliveryCost().then((res) => {
+      console.log(res,"res");
+      this.shipping=parseInt(res)
+      this.fullPrice=this.total+this.shipping
+    })
+  }
+
+  confirmOrder() {
+    this.toast.openSuccess("Success","hello")
+      if (this.auth != undefined) {
+        
+
+      }else{
+        
+        setTimeout(() => {
+          console.log("time out");
+          
+          this.openDialog()
+        }, 30000);
+      }
+
+  }
+
+  openDialog() {
+    this.dialog.open(LoginPageComponentComponent);
   }
 }

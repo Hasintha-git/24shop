@@ -64,6 +64,8 @@ export class AuthService {
   // }
 
   signinWIthGoogle() {
+    console.log("signinWIthGoogle");
+    
     const auth = getAuth();
     return from(signInWithPopup(auth,new GoogleAuthProvider())
     )

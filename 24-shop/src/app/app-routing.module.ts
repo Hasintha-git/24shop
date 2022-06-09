@@ -16,6 +16,9 @@ import { DeliveryPageComponentComponent } from './component/delivery-page-compon
 import { LoginPageComponentComponent } from './component/login-page-component/login-page-component.component'
 import { OrderConfirmPageComponentComponent } from './component/order-confirm-page-component/order-confirm-page-component.component';
 import { RegisterPageComponentComponent } from './component/register-page-component/register-page-component.component';
+import {AuthGuard, canActivate, redirectUnauthorizedTo} from '@angular/fire/auth-guard'
+import { NotFoundPageComponentComponent } from './component/not-found-page-component/not-found-page-component.component';
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['home']);
 
 const routes: Routes = [ 
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -35,15 +38,18 @@ const routes: Routes = [
     {path:'chilled',component:ChilledPageComponentComponent},
     {path:'frozen-food',component:FrozenFoodPageComponentComponent},
   ]},
-  {path:'privacy',component:PrivacyPageComponentComponent},
+  
+
+  {path:'privacy',component:PrivacyPageComponentComponent },
   {path:'delivery',component:DeliveryPageComponentComponent},
   {path:'category',component:CategoryPageComponentComponent},
   {path:'contact',component:ContactPageComponentComponent},
   {path:'about',component:AboutPageComponentComponent},
-  {path:'order',component:OrderAddPageComponentComponent},
-  {path:'orderConfirm',component:OrderConfirmPageComponentComponent},
+  {path:'order',component:OrderAddPageComponentComponent },
+  {path:'orderConfirm',component:OrderConfirmPageComponentComponent,canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   {path:'search',component:SearchResultPageComponentComponent},
   {path:'register',component:RegisterPageComponentComponent},
+  {path:'**',component:NotFoundPageComponentComponent},
 ];
 
 @NgModule({

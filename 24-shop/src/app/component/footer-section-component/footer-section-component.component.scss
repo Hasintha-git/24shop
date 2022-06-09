@@ -4,7 +4,7 @@
     height: 40vh;
     color: transparent;
     justify-content: space-around;
-
+    z-index: 99;
 }
 .divBox {
     width: 100%;
@@ -168,7 +168,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 .footerTxt {
     color: #00b712;
+    text-align: center;
 }

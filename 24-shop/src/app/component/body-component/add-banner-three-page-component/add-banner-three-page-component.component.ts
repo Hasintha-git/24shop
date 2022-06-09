@@ -2,7 +2,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { slideAnimation } from '../add-banner-three-page-component/side.animation';
 import {interval} from 'rxjs';
-export interface Tile {
+export interface Tile { 
   color: string;
   cols: number;
   rows: number;

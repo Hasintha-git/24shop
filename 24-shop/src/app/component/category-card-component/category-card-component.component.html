@@ -1,10 +1,11 @@
-<div fxLayout="row wrap" fxLayout.lt-md="column wrap" fxLayout.lt-sm="column wrap" fxLayoutAlign="center" fxLayoutGap="25px">
-  <div fxFlex={{fxFlex}} *ngFor="let num of currentData" class="catBg">
+<div fxLayout="row wrap" fxLayout.lt-md="column wrap" fxLayout.lt-sm="column wrap" fxLayout.lt-md="column wrap" fxLayoutAlign="center" fxLayoutGap="25px">
+  <div fxFlex={{fxFlex}} *ngFor="let num of currentData" class="catBg" data-aos="fade-up"
+  data-aos-anchor-placement="bottom-bottom" >
 
     <!-- <mat-card-header>
       Hello
     </mat-card-header> -->
-    <div class="imgEffect">
+    <div class="imgEffect" >
       <img mat-card-avatar class="img" src={{num.imgUrl}} (click)="goToCategory(num.title)">
     </div>
     <mat-card-actions>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 import { ItemServiceService } from 'src/app/services/items/item-service.service';
 
 @Component({
@@ -8,19 +9,16 @@ import { ItemServiceService } from 'src/app/services/items/item-service.service'
   styleUrls: ['./chilled-page-component.component.scss']
 })
 export class ChilledPageComponentComponent implements OnInit {
-  public currentData:any;
+  currentData:Array<any>=[];
   imgurl:any;
   status:any;
   price:any;
   oldprice:any;
   pageSlice:Array<any>=[];
 
-  constructor(private itemService:ItemServiceService) { 
-    this.currentData=["hi","hello","how","are","you"];
-    this.price='94';
-    this.oldprice='48';
-    this.status="New";
-    this.pageSlice=this.currentData.slice(0,10)
+  constructor(private itemService:ItemServiceService,private route:Router) { 
+    this.loadItems()
+    // this.pageSlice=this.currentData.slice(0,10)
   }
   ngOnInit(): void {
   }
@@ -49,5 +47,11 @@ export class ChilledPageComponentComponent implements OnInit {
     }
     
   })
+}
+
+orderSet(list:any) {
+  console.log(list);
+  sessionStorage.setItem('buyItem',list.title)
+  this.route.navigate(['/order'])
 }
 }

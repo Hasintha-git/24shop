@@ -64,6 +64,8 @@ export class LoginPageComponentComponent implements OnInit {
   }
 
   logWithGoogle() {
+    console.log("sign in with google");
+    
     this.authService.signinWIthGoogle().subscribe((res) => {
       console.log(res.user.email, res.user.displayName, res.user.uid);
       this.dialogRef.close(LoginPageComponentComponent)

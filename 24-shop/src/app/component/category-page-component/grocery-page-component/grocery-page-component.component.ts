@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 import { ItemServiceService } from 'src/app/services/items/item-service.service';
 
 @Component({
@@ -8,14 +9,14 @@ import { ItemServiceService } from 'src/app/services/items/item-service.service'
   styleUrls: ['./grocery-page-component.component.scss']
 })
 export class GroceryPageComponentComponent implements OnInit {
-  public currentData:any;
+  currentData:Array<any>=[];
   imgurl:any;
   status:any;
   price:any;
   oldprice:any;
   pageSlice:Array<any>=[];
 
-  constructor(private itemService:ItemServiceService) { 
+  constructor(private itemService:ItemServiceService,private route:Router) { 
     this.oldprice='48';
     this.loadItems()
   }
@@ -46,5 +47,11 @@ export class GroceryPageComponentComponent implements OnInit {
     }
     
   })
+}
+
+orderSet(list:any) {
+  console.log(list);
+  sessionStorage.setItem('buyItem',list.title)
+  this.route.navigate(['/order'])
 }
 }
