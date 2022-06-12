@@ -35,7 +35,9 @@ export class SearchBarComponentComponent implements OnInit {
   }
   valueSet() {
     sessionStorage.setItem('search',this.search)
-    this.route.navigate(['/search/'])
+    this.route.navigate(['/search/']).then(() => {
+      window.location.reload();
+    });
   }
 
 }

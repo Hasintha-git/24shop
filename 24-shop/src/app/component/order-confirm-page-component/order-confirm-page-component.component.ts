@@ -115,7 +115,7 @@ export class OrderConfirmPageComponentComponent implements OnInit {
   confirmOrder() {
 
       if (this.auth != undefined) {
-        this.itemService.orderConfirm(this.auth,this.pageSlice,this.fullPrice)
+        this.itemService.orderConfirm(this.auth,this.pageSlice,this.fullPrice,this.shipping)
       }else{
         
         setTimeout(() => {

@@ -8,13 +8,15 @@ import { Toast } from '../toast';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ItemServiceService {
 
   dataCollection: any = [];
-  constructor(private storage: Storage, private fire: Firestore, private angularAuth: AngularFireAuth, private router: Router, private toast: Toast, private angularFire: AngularFirestore) {}
+  orderDetailsCollection: any = [];
+  constructor(private storage: Storage, private fire: Firestore, private angularAuth: AngularFireAuth, private router: Router, private toast: Toast, private angularFire: AngularFirestore) { }
 
   // get item
   async getItem(category: string) {
@@ -85,18 +87,18 @@ export class ItemServiceService {
 
   // add to cart 
   async addToCart(item: any, qty: any, price: any, auth: any): Promise<any> {
-    console.log("cart add service",auth);
-    
+    console.log("cart add service", auth);
+
     const q = query(collection(this.fire, `Cart/${auth}/more`));
-    
+
     const querySnapshot = await getDocs(q);
     const queryData = querySnapshot.docs.map((details) => ({
       ...details.data(),
       id: details.id,
     }));
-    console.log(queryData.length,"queryData");
+    console.log(queryData.length, "queryData");
 
-    if (queryData.length==0) {
+    if (queryData.length == 0) {
       await setDoc(doc(this.fire, `Cart/${auth}/more`, item.title), {
         'title': item.title,
         'price': item.price,
@@ -104,27 +106,27 @@ export class ItemServiceService {
         'subPrice': price,
         'uid': auth,
       })
-    this.router.navigate(['/orderConfirm'])
+      this.router.navigate(['/orderConfirm'])
 
     } else {
-    queryData.map(async (v, id) => {
-      await setDoc(doc(this.fire, `Cart/${auth}/more`, item.title), {
-        'title': item.title,
-        'price': item.price,
-        'qty': qty,
-        'subPrice': price,
-        'uid': auth,
+      queryData.map(async (v, id) => {
+        await setDoc(doc(this.fire, `Cart/${auth}/more`, item.title), {
+          'title': item.title,
+          'price': item.price,
+          'qty': qty,
+          'subPrice': price,
+          'uid': auth,
+        })
       })
-    })
-    this.router.navigate(['/orderConfirm'])
+      this.router.navigate(['/orderConfirm'])
 
-  }
+    }
   }
 
-   // cart list load to table
+  // cart list load to table
   async cartList(auth: any) {
     console.log("cart list");
-    
+
     const querySnapshot = await getDocs(collection(this.fire, `/Cart/${auth}/more/`));
     querySnapshot.forEach((doc) => {
       console.log(doc.id, " => ", doc.data());
@@ -132,7 +134,7 @@ export class ItemServiceService {
     return querySnapshot;
   }
 
-   // cart clear item wise 
+  // cart clear item wise 
   async removeCart(row: any, auth: any) {
     const cityRef = doc(this.fire, `/Cart/${auth}/more/`, row.title)
     await deleteDoc(cityRef).then((res) => {
@@ -162,7 +164,7 @@ export class ItemServiceService {
   async getdeliveryCost() {
     const docRef = doc(this.fire, "DeliveryCost", "KbkvXDGBuzdRcZ7OvhUX");
     const docSnap = await getDoc(docRef);
-    
+
     if (docSnap.exists()) {
       // retrun docSnap.data().price
       console.log("Document data:", docSnap.get('price'));
@@ -174,76 +176,99 @@ export class ItemServiceService {
   }
 
   // add to order confirm 
-  async orderConfirm(auth: any, item: any, price: any,): Promise<any> {
+  async orderConfirm(auth: any, item: any, price: any, shipping: any): Promise<any> {
     const date = new Date();
-    console.log(date.toISOString(),"random");
-    
+    console.log(date.toISOString(), "random");
+
     const confirmDate = date.toString()
     console.log(confirmDate);
-    
+    let visible = false;
 
-    console.log("date--",date.toLocaleString);
-    
+    console.log("date--", date.toLocaleString);
+
     console.log(auth, item, price, "orderConfirm");
     console.log("cart add service", auth);
 
-    const q = query(collection(this.fire, `OrderPending/more/${confirmDate}`));
+    // const order = query(collection(this.fire, `OrderPending`));
+    const orderDetails = query(collection(this.fire, `PendingDetails/${auth}/${confirmDate}`));
 
-    const querySnapshot = await getDocs(q);
+    await setDoc(doc(this.fire, `OrderPending`, confirmDate), {
+      'price': price,
+      'uid': auth,
+      'date': confirmDate,
+      'shippingCost': shipping,
+      'type': 'pending'
+    }).then((res) => {
+
+      visible = true;
+      console.log("visible set", visible);
+
+    })
+
+    const querySnapshot = await getDocs(orderDetails);
     const queryData = querySnapshot.docs.map((details) => ({
       ...details.data(),
       id: details.id,
     }));
 
-    if (queryData.length == 0) {
-      for (let i = 0; i < item.length; i++) {
-        await setDoc(doc(this.fire, `OrderPending/more/${confirmDate}`, item[i].title), {
-          'title': item[i].title,
-          'price': item[i].price,
-          'qty': item[i].qty,
-          'uid': auth,
-          'date': confirmDate,
-          'subTotal':item[i].subPrice,
-        }).then((res)=> {
-          console.log("success")
-          this.clearCart(auth)
-          this.toast.openSuccess("Order Success","Please wait")
-      this.router.navigate(['/home'])
-
-        }).catch((err)=> {
-          this.toast.openWarning("Order Faild","Please try again")
-
-        })
-
-      }
-
-      // this.router.navigate(['/orderConfirm'])
-
-    } else {
-      queryData.map(async (v, id) => {
+    if (visible) {
+      if (queryData.length == 0) {
         for (let i = 0; i < item.length; i++) {
-          await setDoc(doc(this.fire, `OrderPending/more/${confirmDate}`, item[i].title), {
+          await setDoc(doc(this.fire, `PendingDetails/${auth}/${confirmDate}`, item[i].title), {
             'title': item[i].title,
             'price': item[i].price,
             'qty': item[i].qty,
             'uid': auth,
             'date': confirmDate,
-            'subTotal':item[i].subPrice,
-          }).then((res)=> {
+            'subTotal': item[i].subPrice,
+          }).then((res) => {
             console.log("success")
-          this.clearCart(auth)
-            this.toast.openSuccess("Order Success","Please wait")
-      this.router.navigate(['/home'])
+            this.clearCart(auth)
+            this.toast.openSuccess("Order Success", "Please wait")
+            console.log(item[i].title);
 
-          }).catch((err)=> {
-            this.toast.openWarning("Order Faild","Please try again")
-  
+            this.router.navigate(['/home'])
+
+          }).catch((err) => {
+            this.toast.openWarning("Order Faild", "Please try again")
+
           })
+
         }
-      })
+
+        // this.router.navigate(['/orderConfirm'])
+
+      } else {
+        queryData.map(async (v, id) => {
+          for (let i = 0; i < item.length; i++) {
+            await setDoc(doc(this.fire, `PendingDetails/${auth}/${confirmDate}`, item[i].title), {
+              'title': item[i].title,
+              'price': item[i].price,
+              'qty': item[i].qty,
+              'uid': auth,
+              'date': confirmDate,
+              'subTotal': item[i].subPrice,
+            }).then((res) => {
+              console.log("success")
+              this.clearCart(auth)
+              this.toast.openSuccess("Order Success", "Please wait")
+              this.router.navigate(['/home'])
+
+            }).catch((err) => {
+              this.toast.openWarning("Order Faild", "Please try again")
+
+            })
+          }
+        })
 
 
+      }
+    } else {
+      this.toast.openWarning("Something whent wrong", "please try again")
     }
   }
 
+
 }
+
+

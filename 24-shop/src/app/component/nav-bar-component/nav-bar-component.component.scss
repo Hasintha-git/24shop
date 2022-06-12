@@ -129,6 +129,10 @@
 
   .imgSize {
     width: 40px;
+    cursor: pointer;
+    &:hover {
+      width: 42px;
+    }
   }
 
   .div1 {
@@ -175,6 +179,10 @@
     width: 60px;
     display: flex;
     padding-left: 10px;
+    cursor: pointer;
+    &:hover {
+      width: 61px;
+    }
   }
 
   .logoTxt {

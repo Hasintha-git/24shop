@@ -53,5 +53,8 @@ export class NavBarComponentComponent implements OnInit {
     this.dialog.open(LoginPageComponentComponent);
   }
 
+  clickLogo() {
+    this.router.navigate(['home'])
+  }
 
 }

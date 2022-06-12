@@ -21,10 +21,10 @@ export class SearchResultPageComponentComponent implements OnInit {
   constructor(private itemService:ItemServiceService ) { 
     this.search=sessionStorage.getItem('search')
     
-    
-    this.loadItems()
   }
   ngOnInit(): void {
+    this.loadItems()
+
   }
 
   loadItems(){
