@@ -1,0 +1,38 @@
+name:Build anddeploy
+
+on:
+  push:
+    branches:[ master ]
+    
+    #run workflow manually
+
+jobs:
+  build:
+      name:Build
+      runs-on:ubuntu-latest
+      steps:
+      - name: Checkout repository
+        users: actions/checkout/@master
+      - name: Install dependencies
+        runs:npm ci
+        with:
+          name:dist
+          path:dist
+  deploy:
+    name:deploy
+    needs:build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        users: actions/checkout/@master
+      - name: Download artifact
+        users: actions/download-artifact/@master
+        with:
+          name:dist
+          path:dist
+      - name: Deploy to firebase
+        users: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
