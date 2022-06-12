@@ -26,15 +26,14 @@ export class SearchBarComponentComponent implements OnInit {
 
   }
 
-  counter() {
-    this.route.navigate(['/home'])
+  // counter() {
+  //   this.route.navigate(['/home'])
     
-  }
+  // }
   loadItems() {
     this.valueSet()
   }
   valueSet() {
-    sessionStorage.removeItem('search')
     sessionStorage.setItem('search',this.search)
     this.route.navigate(['/search/'])
   }

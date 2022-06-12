@@ -30,18 +30,16 @@ export interface PeriodicElement {
   styleUrls: ['./order-confirm-page-component.component.scss']
 })
 export class OrderConfirmPageComponentComponent implements OnInit {
-  total: number;
-  shipping: number;
-  fullPrice: number;
+  total: any;
+  shipping: any;
+  fullPrice: any;
 
   displayedColumns: string[] = ['item', 'price', 'qty', 'subTotal'];
   // dataSource = ELEMENT_DATA;
   pageSlice: Array<any> = [];
   auth: any;
   constructor(public dialog: MatDialog,private toast: Toast,private router:Router,private itemService: ItemServiceService, private angularAuth: AngularFireAuth) {
-    this.total = 0;
-    this.shipping = 0;
-    this.fullPrice = 0;
+
     console.log(this.auth);
     this.authUserSet()
 
@@ -57,7 +55,11 @@ export class OrderConfirmPageComponentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.total = 0;
+    this.shipping = 0;
+    this.fullPrice = 0;
     setTimeout(() => {
+
       this.loadCart()
     }, 1000);
     this.authUserSet()
@@ -77,7 +79,12 @@ export class OrderConfirmPageComponentComponent implements OnInit {
       for (let i = 0; i < res.size; i++) {
         this.pageSlice[i] = res.docs[i].data();
         console.log(this.pageSlice[i].price, "res data ........");
-        this.total+=parseInt(this.pageSlice[i].price);
+        const itemPrice=parseInt(this.pageSlice[i].price);
+        const itemQty=parseInt(this.pageSlice[i].qty);
+
+        console.log(itemPrice,itemQty,"loadddd");
+        
+        this.total+=itemPrice*itemQty;
         this.fullPrice=this.total+this.shipping
     
       }
@@ -106,10 +113,9 @@ export class OrderConfirmPageComponentComponent implements OnInit {
   }
 
   confirmOrder() {
-    this.toast.openSuccess("Success","hello")
-      if (this.auth != undefined) {
-        
 
+      if (this.auth != undefined) {
+        this.itemService.orderConfirm(this.auth,this.pageSlice,this.fullPrice)
       }else{
         
         setTimeout(() => {

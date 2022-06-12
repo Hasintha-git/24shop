@@ -3,3 +3,31 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: 'PT Sans', sans-serif; }
 @import 'bootstrap/dist/css/bootstrap.css';
+
+::-webkit-scrollbar {
+    width: 0.75em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+    border-radius: 100vw;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00b712;
+    background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+    border-radius: 10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #00b712;
+    background-image: linear-gradient(315deg, #5aff15 0%, #00b712 74%);
+}
+@supports(scrollbar-color: red blue){
+    * {
+        scrollbar-color: red blue;
+        scrollbar-width: 1em;
+    }
+}

@@ -4,7 +4,7 @@
     flex-direction: row;
     .div1 {
         flex: 1;
-        height: 90vh;
+        height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -119,6 +119,7 @@ table {
                 }
                 .txtHeader {
                     word-spacing: 5px;
+                    display: none;
                 }
                 .txtTitle {
                     font-size: 24px;
@@ -130,7 +131,7 @@ table {
                     font-size: 11px;
                 }
                 .txtPrice {
-                    font-size: 24px;
+                    font-size: 36px;
                     font-weight: bold;
                     color: #333333;
                 }

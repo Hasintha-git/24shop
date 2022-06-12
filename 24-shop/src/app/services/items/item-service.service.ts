@@ -173,4 +173,77 @@ export class ItemServiceService {
     }
   }
 
+  // add to order confirm 
+  async orderConfirm(auth: any, item: any, price: any,): Promise<any> {
+    const date = new Date();
+    console.log(date.toISOString(),"random");
+    
+    const confirmDate = date.toString()
+    console.log(confirmDate);
+    
+
+    console.log("date--",date.toLocaleString);
+    
+    console.log(auth, item, price, "orderConfirm");
+    console.log("cart add service", auth);
+
+    const q = query(collection(this.fire, `OrderPending/more/${confirmDate}`));
+
+    const querySnapshot = await getDocs(q);
+    const queryData = querySnapshot.docs.map((details) => ({
+      ...details.data(),
+      id: details.id,
+    }));
+
+    if (queryData.length == 0) {
+      for (let i = 0; i < item.length; i++) {
+        await setDoc(doc(this.fire, `OrderPending/more/${confirmDate}`, item[i].title), {
+          'title': item[i].title,
+          'price': item[i].price,
+          'qty': item[i].qty,
+          'uid': auth,
+          'date': confirmDate,
+          'subTotal':item[i].subPrice,
+        }).then((res)=> {
+          console.log("success")
+          this.clearCart(auth)
+          this.toast.openSuccess("Order Success","Please wait")
+      this.router.navigate(['/home'])
+
+        }).catch((err)=> {
+          this.toast.openWarning("Order Faild","Please try again")
+
+        })
+
+      }
+
+      // this.router.navigate(['/orderConfirm'])
+
+    } else {
+      queryData.map(async (v, id) => {
+        for (let i = 0; i < item.length; i++) {
+          await setDoc(doc(this.fire, `OrderPending/more/${confirmDate}`, item[i].title), {
+            'title': item[i].title,
+            'price': item[i].price,
+            'qty': item[i].qty,
+            'uid': auth,
+            'date': confirmDate,
+            'subTotal':item[i].subPrice,
+          }).then((res)=> {
+            console.log("success")
+          this.clearCart(auth)
+            this.toast.openSuccess("Order Success","Please wait")
+      this.router.navigate(['/home'])
+
+          }).catch((err)=> {
+            this.toast.openWarning("Order Faild","Please try again")
+  
+          })
+        }
+      })
+
+
+    }
+  }
+
 }

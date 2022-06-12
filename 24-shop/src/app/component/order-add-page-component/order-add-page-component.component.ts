@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ItemServiceService } from 'src/app/services/items/item-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginPageComponentComponent } from '../login-page-component/login-page-component.component';
+import { Toast } from 'src/app/services/toast';
 
 @Component({
   selector: 'app-order-add-page-component',
@@ -13,31 +14,41 @@ import { LoginPageComponentComponent } from '../login-page-component/login-page-
 export class OrderAddPageComponentComponent implements OnInit {
   qtyCount:number;
   price:any;
-  // temPrice:number;
-  // description:string;
-  // title:string;
+  currentQty:number;
   auth:any;
   currentData:Array<any>=[];
   title:any;
   
-  constructor(private itemService:ItemServiceService,private angularAuth:AngularFireAuth,private router:Router,public dialog: MatDialog) {
+  constructor(private itemService:ItemServiceService,private angularAuth:AngularFireAuth,private toast:Toast,private router:Router,public dialog: MatDialog) {
+    this.currentQty=0;
+    this.qtyCount=0;
+
     this.loadSelectedItem()
-    this.qtyCount=1;
     
    }
 
   ngOnInit(): void {
+    this.authUserSet()
   }
 
   plus(){
-    this.qtyCount=this.qtyCount+1;
-    this.price=this.currentData[0].price*this.qtyCount;
+    console.log(this.currentQty,"current");
+    
+    if (this.currentQty>this.qtyCount) {
+      this.qtyCount=this.qtyCount+1;
+      this.price=this.currentData[0].price*this.qtyCount;
+    }else{
+      this.toast.openInfo("Out of stock","please contact us")
+    }
+
   }
 
   min(){
     if (this.qtyCount>1) {
     this.qtyCount=this.qtyCount-1
     this.price=this.currentData[0].price*this.qtyCount;
+    }else{
+      this.toast.openInfo("QTY is 0","Please add QTY  ")
     }
   }
 
@@ -48,12 +59,19 @@ export class OrderAddPageComponentComponent implements OnInit {
       console.log(res,"size");
       
       for (let i = 0; i < res.size; i++) {
+        console.log(res.docs[i].data(),"qtyyyy");
         
         this.currentData[i]=res.docs[i].data();
         console.log(this.currentData[i],"res");
       }
-
+      this.currentQty=this.currentData[0].qty
+      if (this.currentQty>0) {
+        this.qtyCount=1
+      }
       this.price=this.currentData[0].price*this.qtyCount;
+      
+ 
+      
 
     // console.log(res,"res");
     
@@ -62,15 +80,20 @@ export class OrderAddPageComponentComponent implements OnInit {
 
 
   addtoCart(item:any){
-    if (this.auth==undefined) {
-      console.log("user set");
-      
-        this.authUserSet()
+    if (this.qtyCount>0) {
+      if (this.auth==undefined) {
+        console.log("user set");
+        
+          this.authUserSet()
+      }else{
+        console.log("else");
+  
+        this.itemService.addToCart(item,this.qtyCount,this.price,this.auth);
+      }
     }else{
-      console.log("else");
-
-      this.itemService.addToCart(item,this.qtyCount,this.price,this.auth);
+      this.toast.openInfo("QTY is 0","Please add Item count")
     }
+
     
   }
 
