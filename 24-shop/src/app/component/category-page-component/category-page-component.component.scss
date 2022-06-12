@@ -1,4 +1,4 @@
-.body {
+.catbody {
     // background: rgb(90,255,21);
     // background: radial-gradient(circle, rgba(90,255,21,0.8939950980392157) 0%, rgba(90,255,21,0.6334908963585435) 35%, rgba(0,212,255,0) 100%);
     width: 100%;
@@ -6,7 +6,21 @@
     display: flex;
     justify-content: center;
     
-    // align-items: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1169px) {
+    .catbody {
+        // background: rgb(90,255,21);
+        // background: radial-gradient(circle, rgba(90,255,21,0.8939950980392157) 0%, rgba(90,255,21,0.6334908963585435) 35%, rgba(0,212,255,0) 100%);
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        
+        align-items: center;
+    }
+    
 }
 
 .example-button-toggle-label {
@@ -25,4 +39,12 @@
   }
   .mat-tab-body-wrapper {
     display: none;
+ }
+
+ .body2 {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    
  }

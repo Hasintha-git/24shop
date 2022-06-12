@@ -1,0 +1,162 @@
+.main-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    margin: 15px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+}
+.div-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex: 2;
+    flex-direction: column;
+    .tblHeader {
+        width:  90%;
+        height: 40px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background-color: #00b712;
+        background-image: linear-gradient(315deg, #00b712 0%, #5aff15 44%);
+        // border-bottom-left-radius: 10px;
+        // border-top-right-radius: 10px;
+        margin: 10px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.1); 
+    }
+    .tblFooter {
+        width:  90%;
+        height: 40px;
+        display: flex;
+        text-align: center;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 10px;
+        .btnPurchase {
+            width: 150px;
+            height: 33px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+            background-color: #00b712;
+            background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+            &:hover {
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+            }
+        }
+    }
+}
+
+.div-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex: 0.7;
+    flex-direction: column;
+
+    .boxHeader {
+        width:  90%;
+        height: 70px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background-color: #00b712;
+        background-image: linear-gradient(315deg, #00b712 0%, #5aff15 44%);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+        .txtHeader {
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+        }
+    }
+    .boxDetails {
+        width:  90%;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+        height: 200px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        border-bottom-right-radius: 20px;
+        p {
+            font-weight: 600;
+        }
+        .spanTxt {
+            position: absolute;
+            right: 70px;
+            font-weight: 600;
+        }
+        .spanTxtTotal {
+            position: absolute;
+            right: 70px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .hr {
+            border: 1px solid black;
+            width: 100%;
+        }
+    }
+    .boxPurchase {
+        width:  90%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .btnPurchase {
+            width: 100%;
+            height: 33px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+            background-color: #00b712;
+            background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+            &:hover {
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 956px) {
+    .main-div {
+        flex-direction: column;
+        height: auto;
+    }
+    .div-1 {
+        height: 50%;
+        width: 100%;
+    }
+    .div-2 {
+        height: 50%;
+        width: 100%;
+    }
+    .imgBox {
+        height: auto;
+        height: auto;
+        .img {
+            width: 200px;
+            height: auto;
+        }
+    }
+}
+.example-container {
+    height: 400px;
+    width: 90%;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  

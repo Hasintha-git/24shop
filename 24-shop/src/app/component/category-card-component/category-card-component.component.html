@@ -1,20 +1,17 @@
-<!-- <div class="content"> -->
-  <div fxLayout="row wrap"  fxLayout.lt-sm="column wrap"  fxLayoutAlign="center" fxLayoutGap="10px">
-    <div fxFlex="20%"  *ngFor="let num of currentData">
-      <mat-card class="mat-elevation-z4 card" >
-        <mat-card-header>
-          <div class="addBtn">
-            <p>New</p>
-          </div>
-        </mat-card-header>
-        <img  mat-card-image class="imgEffect" src={{imgurl}}>
-        <mat-card-actions>
-          <mat-card-title>Category Name {{num}}</mat-card-title>
-          <button class="btnAddCart" mat-button>See more</button>
-        </mat-card-actions>
-      </mat-card>
+<div fxLayout="row wrap" fxLayout.lt-md="column wrap" fxLayout.lt-sm="column wrap" fxLayout.lt-md="column wrap" fxLayoutAlign="center" fxLayoutGap="25px">
+  <div fxFlex={{fxFlex}} *ngFor="let num of currentData" class="catBg" data-aos="fade-up"
+  data-aos-anchor-placement="bottom-bottom" >
 
-
+    <!-- <mat-card-header>
+      Hello
+    </mat-card-header> -->
+    <div class="imgEffect" >
+      <img mat-card-avatar class="img" src={{num.imgUrl}} (click)="goToCategory(num.title)">
     </div>
+    <mat-card-actions>
+      <p class="btnAddCart" mat-button>{{num.title}}</p>
+    </mat-card-actions>
+
   </div>
-  <!-- </div> -->
+</div>
+

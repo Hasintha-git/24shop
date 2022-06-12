@@ -7,16 +7,29 @@
   margin-bottom: 20px;
   box-shadow: none; 
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left:auto;
+  margin-right:auto;  
+  vertical-align:middle;
   // background-image: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);
 }
 .card:hover {
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
 	}
 
+  .btnSection {
+    display: flex;
+    background-color: #00b712;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
 .btnAddCart {
   background-color: #00b712;
   background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
-  // border-radius: 20px;
   color: white;
   height: 33px;
   text-align: center;
@@ -75,3 +88,24 @@
   .icnCart {
     font-size: 18px;
   }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgEffect {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.img {
+  width: 90px;
+  height: auto;
+  margin: auto;
+}

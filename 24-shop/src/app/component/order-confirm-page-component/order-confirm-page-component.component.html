@@ -1,0 +1,61 @@
+<app-search-bar-component></app-search-bar-component>
+<div class="main-div">
+  <div class="div-1"  data-aos="zoom-in-right">
+    <div class="tblHeader">
+      <label>Shopping Items</label>
+
+    </div>
+    <div class="example-container ">
+      <div class="col-md-12 offset-md-0 table-wrapper-scroll-y my-custom-scrollbar" style="background: none">
+
+        <table class="table table-sm ">
+          <thead>
+            <tr>
+              <!-- <th scope="col" class="txt-clr">Item Id</th> -->
+              <th scope="col" class="txt-clr">Item Title</th>
+              <th scope="col" class="txt-clr">Price</th>
+              <th scope="col" class="txt-clr">Qty</th>
+              <th scope="col" class="txt-clr">Sub Total</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of pageSlice" class="tbl-click tbl-tr-row" style="cursor: pointer">
+
+              <!-- <td #tblItemId id="tblItemId">{{row.itemId}}</td> -->
+              <td #tblTitle id="tblTitle">{{row.title}}</td>
+              <td #tblPrice id="tblPrice">{{row.price}}</td>
+              <td #tblQty id="tblQty">{{row.qty}}</td>
+              <td #tblWeight id="tblWeight">{{row.subPrice}}</td>
+
+              <td (click)="close(row)">
+                <mat-icon class="view-icon" matTooltip="update">close</mat-icon>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tblFooter">
+      <button mat-button class="btnPurchase" (click)="clearCart()">Clear Cart</button>
+
+    </div>
+
+
+  </div>
+  <div class="div-2" data-aos="zoom-in-left">
+    <div class="boxHeader">
+      <p class="txtHeader">Summery</p>
+    </div>
+    <div class="boxDetails">
+      <p>Sub Total <span class="spanTxt">{{total}}</span></p>
+      <p>Shipping Cost <span class="spanTxt">{{shipping}}</span></p>
+      <hr class="hr">
+      <p>Order Total <span class="spanTxtTotal">{{fullPrice}}</span></p>
+
+    </div>
+    <div class="boxPurchase" (click)="confirmOrder()">
+      <button mat-button class="btnPurchase">Purchase</button>
+    </div>
+  </div>
+</div>

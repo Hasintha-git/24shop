@@ -30,7 +30,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export class BodyComponentComponent implements OnInit {
 
-  constructor() { }
+  imgurl_1:any;
+  imgurl_2:any;
+
+  
+  constructor() {
+    // this.imgurl_1="../../assets/adds/vegi.png"
+    // this.imgurl_2="../../assets/adds/ice.png"
+
+   }
 
   ngOnInit(): void {
   }

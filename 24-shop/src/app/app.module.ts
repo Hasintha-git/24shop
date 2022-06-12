@@ -7,7 +7,6 @@ import { HomePageComponentComponent } from './component/home-page-component/home
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponentComponent } from './component/nav-bar-component/nav-bar-component.component';
 import { CategoryPageComponentComponent } from './component/category-page-component/category-page-component.component';
-import { ProductPageComponentComponent } from './component/product-page-component/product-page-component.component';
 import { ContactPageComponentComponent } from './component/contact-page-component/contact-page-component.component';
 import { AboutPageComponentComponent } from './component/about-page-component/about-page-component.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -30,6 +29,34 @@ import { BeveragesPageComponentComponent } from './component/category-page-compo
 import { HouseholdPageComponentComponent } from './component/category-page-component/household-page-component/household-page-component.component';
 import { ChilledPageComponentComponent } from './component/category-page-component/chilled-page-component/chilled-page-component.component';
 import { FrozenFoodPageComponentComponent } from './component/category-page-component/frozen-food-page-component/frozen-food-page-component.component';
+import {AngularFireModule} from '@angular/fire/compat'
+import { environment } from 'src/environments/environment';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import { TrendingProductPageComponentComponent } from './component/body-component/trending-product-page-component/trending-product-page-component.component';
+import { OrderAddPageComponentComponent } from './component/order-add-page-component/order-add-page-component.component';
+import { SearchResultPageComponentComponent } from './component/search-result-page-component/search-result-page-component.component';
+import { AddBannerTwoPageComponentComponent } from './component/home-page-component/add-banner-two-page-component/add-banner-two-page-component.component';
+import { AddBannerThreePageComponentComponent } from './component/body-component/add-banner-three-page-component/add-banner-three-page-component.component';
+import { PrivacyPageComponentComponent } from './component/privacy-page-component/privacy-page-component.component';
+import { DeliveryPageComponentComponent } from './component/delivery-page-component/delivery-page-component.component';
+import { LoginPageComponentComponent } from './component/login-page-component/login-page-component.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { NgToastModule } from 'ng-angular-popup';
+import {MatStepperModule} from '@angular/material/stepper';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
+import { OrderConfirmPageComponentComponent } from './component/order-confirm-page-component/order-confirm-page-component.component';
+import { RegisterPageComponentComponent } from './component/register-page-component/register-page-component.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { MoreDetailsPageComponentComponent } from './component/login-page-component/additional-data/more-details-page-component/more-details-page-component.component';
+import { NotFoundPageComponentComponent } from './component/not-found-page-component/not-found-page-component.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +64,6 @@ import { FrozenFoodPageComponentComponent } from './component/category-page-comp
     HomePageComponentComponent,
     NavBarComponentComponent,
     CategoryPageComponentComponent,
-    ProductPageComponentComponent,
     ContactPageComponentComponent,
     AboutPageComponentComponent,
     SearchBarComponentComponent,
@@ -50,6 +76,19 @@ import { FrozenFoodPageComponentComponent } from './component/category-page-comp
     HouseholdPageComponentComponent,
     ChilledPageComponentComponent,
     FrozenFoodPageComponentComponent,
+    TrendingProductPageComponentComponent,
+    OrderAddPageComponentComponent,
+    SearchResultPageComponentComponent,
+    AddBannerTwoPageComponentComponent,
+    AddBannerThreePageComponentComponent,
+    PrivacyPageComponentComponent,
+    DeliveryPageComponentComponent,
+    LoginPageComponentComponent,
+    OrderConfirmPageComponentComponent,
+    RegisterPageComponentComponent,
+    MoreDetailsPageComponentComponent,
+    NotFoundPageComponentComponent,
+    // Firestore
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -64,7 +103,24 @@ import { FrozenFoodPageComponentComponent } from './component/category-page-comp
     MatInputModule,
     MatCardModule,
     FlexLayoutModule,
-    MatTabsModule
+    MatTabsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule,
+    MatMenuModule,
+    NgToastModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    MatOptionModule,
+    FormsModule,
+    MatSelectModule,
+    MatDialogModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

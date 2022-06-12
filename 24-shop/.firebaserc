@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "shop-web-b29c1": {
+      "hosting": {
+        "24-shop": [
+          "shop-web-b29c1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "shop-web-b29c1"
+  }
+}

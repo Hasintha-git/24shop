@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { LoginPageComponentComponent } from '../../component/login-page-component/login-page-component.component'
+import { AuthService } from '../shared/auth.service';
+
 
 @Component({
   selector: 'app-home-page-component',
@@ -6,14 +12,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page-component.component.scss']
 })
 export class HomePageComponentComponent implements OnInit {
+  isSignIn:any;
 
-  constructor() { }
-  
-  image: string | undefined;
-  luxury: string|undefined;
+  constructor(private router:Router,public dialog: MatDialog,private aFAuth:AngularFireAuth,private authService:AuthService) {
+    
 
-  ngOnInit(): void {
-    this.luxury="/cars/luxury-cars";
   }
+
+
+  ngOnInit(){
+    
+  }
+
+  openDialog() {
+    this.dialog.open(LoginPageComponentComponent);
+  }
+
+  // checkLocalStorage() {
+  //   if (!localStorage.getItem('user')) {
+  //     this.getDataFromFirebase();
+  //   } else {
+  //     console.log('localStorage ready!');
+  //   }
+
+  // }
+
+  // getDataFromFirebase() {
+  //   this.aFAuth.authState.subscribe(auth => {
+  //     if (auth) {
+  //       console.log('Authenticated');
+  //       this.authService.setUserLoggedIn(auth); // set user data from firebase on local storage
+  //     } else {
+  //       setTimeout(() => {
+  //         this.openDialog()
+  //       }, 10000);
+  //     }
+  //   });
+  // }
+
 
 }

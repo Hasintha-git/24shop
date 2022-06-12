@@ -32,9 +32,12 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/aos/dist/aos.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/aos/dist/aos.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -164,6 +167,18 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": true,
+            "ssr": false,
+            "browserTarget": "24-shop:build:production",
+            "firebaseProject": "shop-web-b29c1",
+            "firebaseHostingSite": "shop-web-b29c1",
+            "serverTarget": "24-shop:server:production",
+            "prerenderTarget": "24-shop:prerender:production"
+          }
         }
       }
     }
