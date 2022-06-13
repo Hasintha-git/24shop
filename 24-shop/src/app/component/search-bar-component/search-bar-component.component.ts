@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router'; 
-// import { Serach } from 'src/app/services/search/serach';
-import { SerachService} from '../../services/search/serach'
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-search-bar-component',
@@ -20,16 +18,10 @@ export class SearchBarComponentComponent implements OnInit {
 
   public keyPress = (event: KeyboardEvent) => {
     if (event.key == 'Enter') {
-      console.log(this.search);
       this.valueSet()
     }
 
   }
-
-  // counter() {
-  //   this.route.navigate(['/home'])
-    
-  // }
   loadItems() {
     this.valueSet()
   }

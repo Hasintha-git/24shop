@@ -1,6 +1,5 @@
-import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
-import { slideAnimation } from '../add-baner-component/side.animation';
+import {Component, OnInit} from '@angular/core';
+import {slideAnimation} from '../add-baner-component/side.animation';
 import {interval} from 'rxjs';
 
 export interface Tile {
@@ -14,14 +13,13 @@ export interface Tile {
   selector: 'app-add-baner-component',
   templateUrl: './add-baner-component.component.html',
   styleUrls: ['./add-baner-component.component.scss'],
-  animations: [slideAnimation] 
+  animations: [slideAnimation]
 })
 
 export class AddBanerComponentComponent implements OnInit {
   currentIndex = 0;
   slides = [
     {image: '../../../../assets/banners/vegitable.png', description: 'Image 01'},
-    // {image: '../../../../assets/banners/mixed.png', description: 'Image 02'},
     {image: '../../../../assets/banners/delivery.png', description: 'Image 03'},
     {image: '../../../../assets/banners/spicy.png', description: 'Image 04'},
   ];
@@ -49,12 +47,12 @@ export class AddBanerComponentComponent implements OnInit {
   prevSlide() {
     this.currentIndex = (this.currentIndex < this.slides.length - 1) ? ++this.currentIndex : 0;
   }
-  
+
   ngOnInit(): void {
     const obs=interval(6000);
     obs.subscribe((d)=> {
       this.nextSlide()
-      
+
     })
   }
 
