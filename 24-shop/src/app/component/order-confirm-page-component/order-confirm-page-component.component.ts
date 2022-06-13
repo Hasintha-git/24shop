@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Router } from '@angular/router';
-import { getAuth } from 'firebase/auth';
-import { ItemServiceService } from 'src/app/services/items/item-service.service';
-import { Toast } from '../../services/toast';
-import { MatDialog } from '@angular/material/dialog';
-import { LoginPageComponentComponent } from '../login-page-component/login-page-component.component';
+import {Component, OnInit} from '@angular/core';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
+import {Router} from '@angular/router';
+import {ItemServiceService} from 'src/app/services/items/item-service.service';
+import {Toast} from '../../services/toast';
+import {MatDialog} from '@angular/material/dialog';
+import {LoginPageComponentComponent} from '../login-page-component/login-page-component.component';
 
 export interface PeriodicElement {
   item: string;
@@ -13,16 +12,6 @@ export interface PeriodicElement {
   qty: number;
   subTotal: number;
 }
-
-// const ELEMENT_DATA: PeriodicElement[] = [
-//   {item: 'chilli powder', price: 450.00, qty: 1, subTotal: 450.00},
-//   {item: 'Banana 1 kg', price: 120.00, qty: 1, subTotal: 120.00},
-//   {item: 'rice 10 kg', price: 1800.00, qty: 1, subTotal: 1800.00},
-//   {item: 'Cocount 400g', price: 440.00, qty: 1, subTotal: 440.00},
-//   {item: 'dalk 2 kg', price: 1100.00, qty: 2, subTotal: 2200.00},
-//   {item: 'yorgut', price: 60.00, qty: 10, subTotal: 600.00},
-
-// ];
 
 @Component({
   selector: 'app-order-confirm-page-component',
@@ -33,6 +22,7 @@ export class OrderConfirmPageComponentComponent implements OnInit {
   total: any;
   shipping: any;
   fullPrice: any;
+  msg: any;
 
   displayedColumns: string[] = ['item', 'price', 'qty', 'subTotal'];
   // dataSource = ELEMENT_DATA;
@@ -76,18 +66,23 @@ export class OrderConfirmPageComponentComponent implements OnInit {
     this.itemService.cartList(this.auth).then((res) => {
       console.log(res, "size");
       sessionStorage.removeItem("search")
-      for (let i = 0; i < res.size; i++) {
-        this.pageSlice[i] = res.docs[i].data();
-        console.log(this.pageSlice[i].price, "res data ........");
-        const itemPrice=parseInt(this.pageSlice[i].price);
-        const itemQty=parseInt(this.pageSlice[i].qty);
+      if (res.size == 0) {
+        this.msg = "Cart is Empty"
+      } else {
+        for (let i = 0; i < res.size; i++) {
+          this.pageSlice[i] = res.docs[i].data();
+          console.log(this.pageSlice[i].price, "res data ........");
+          const itemPrice = parseInt(this.pageSlice[i].price);
+          const itemQty = parseInt(this.pageSlice[i].qty);
 
-        console.log(itemPrice,itemQty,"loadddd");
-        
-        this.total+=itemPrice*itemQty;
-        this.fullPrice=this.total+this.shipping
-    
+          console.log(itemPrice, itemQty, "loadddd");
+
+          this.total += itemPrice * itemQty;
+          this.fullPrice = this.total + this.shipping
+
+        }
       }
+
     })
   }
 
@@ -117,10 +112,10 @@ export class OrderConfirmPageComponentComponent implements OnInit {
       if (this.auth != undefined) {
         this.itemService.orderConfirm(this.auth,this.pageSlice,this.fullPrice,this.shipping)
       }else{
-        
+
         setTimeout(() => {
           console.log("time out");
-          
+
           this.openDialog()
         }, 30000);
       }

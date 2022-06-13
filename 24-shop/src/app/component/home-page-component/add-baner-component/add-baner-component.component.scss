@@ -9,7 +9,6 @@
     margin: 0;
     padding: 0;
     margin-bottom: 20px;
-    // padding: 10px;
 }
 
 .side1{
@@ -66,19 +65,15 @@
       justify-content: center;
       text-align: center;
       display: flex;
-      // background-color: #ed1c94;
     }
   }
 }
 // side1 responsive
 @media only screen and (max-width: 1169px) {
   .side1{
-    // background-color: #ed1c94;
     .side1Body {
-      // background-color: #000000;
       width: 90%;
       height: 80%;
-      // background-color: #000000;
       .shopName {
         font-size: 24px;
         font-family: Georgia, 'Times New Roman', Times, serif;
@@ -111,7 +106,6 @@
         justify-content: center;
         text-align: center;
         display: flex;
-        // background-color: #ed1c94;
       }
       
     }

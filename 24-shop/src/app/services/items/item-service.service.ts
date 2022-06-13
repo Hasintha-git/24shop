@@ -1,12 +1,24 @@
-import { Injectable } from '@angular/core';
-import { Storage } from '@angular/fire/storage';
-import { Firestore } from '@angular/fire/firestore';
-import { getDocs, setDoc, collection, query, limit, doc, where, orderBy, startAt, endAt, deleteDoc, getDoc } from '@firebase/firestore';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Router } from '@angular/router';
-import { Toast } from '../toast';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-
+import {Injectable} from '@angular/core';
+import {Storage} from '@angular/fire/storage';
+import {Firestore} from '@angular/fire/firestore';
+import {
+  collection,
+  deleteDoc,
+  doc,
+  endAt,
+  getDoc,
+  getDocs,
+  limit,
+  orderBy,
+  query,
+  setDoc,
+  startAt,
+  where
+} from '@firebase/firestore';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
+import {Router} from '@angular/router';
+import {Toast} from '../toast';
+import {AngularFirestore} from '@angular/fire/compat/firestore';
 
 
 @Injectable({
@@ -37,7 +49,7 @@ export class ItemServiceService {
     return data
   }
 
-  // search customer 
+  // search customer
   async searchCustomers(userName: any) {
     console.log("get customer", userName);
     var citiesRef = collection(this.fire, "User")
@@ -56,7 +68,7 @@ export class ItemServiceService {
 
   }
 
-  // search item 
+  // search item
   async searchItem(item: string) {
     console.log("get item", item);
     var citiesRef = collection(this.fire, "Items")
@@ -66,6 +78,9 @@ export class ItemServiceService {
     const data = await getDocs(querySnapshot)
     console.log(data.size, "data");
 
+    if (data.size == 0) {
+      this.toast.openWarning("Item Not Found", "Wrong input")
+    }
     data.forEach(element => {
       console.log(element.data(), "for");
     })
@@ -85,7 +100,7 @@ export class ItemServiceService {
     return data
   }
 
-  // add to cart 
+  // add to cart
   async addToCart(item: any, qty: any, price: any, auth: any): Promise<any> {
     console.log("cart add service", auth);
 
@@ -134,7 +149,7 @@ export class ItemServiceService {
     return querySnapshot;
   }
 
-  // cart clear item wise 
+  // cart clear item wise
   async removeCart(row: any, auth: any) {
     const cityRef = doc(this.fire, `/Cart/${auth}/more/`, row.title)
     await deleteDoc(cityRef).then((res) => {
@@ -147,12 +162,12 @@ export class ItemServiceService {
     return
   }
 
-  // cart clear 
+  // cart clear
   async clearCart(auth: any) {
     this.angularFire.collection(`/Cart/${auth}/more/`).get().toPromise().then((querySnap) => {
       querySnap?.forEach((doc) => {
         doc.ref.delete().then((res) => {
-          this.toast.openSuccess("Remove Item", "Success")
+          // this.toast.openSuccess("Remove Item", "Success")
         }).catch(err => {
           this.toast.openWarning("Remove Item faild", "Wrong")
         })
@@ -175,7 +190,7 @@ export class ItemServiceService {
     }
   }
 
-  // add to order confirm 
+  // add to order confirm
   async orderConfirm(auth: any, item: any, price: any, shipping: any): Promise<any> {
     const date = new Date();
     console.log(date.toISOString(), "random");
