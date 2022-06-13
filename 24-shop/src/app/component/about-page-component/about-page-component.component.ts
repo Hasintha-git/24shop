@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-about-page-component',
@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-page-component.component.scss']
 })
 export class AboutPageComponentComponent implements OnInit {
+  imgUrl: any;
 
-  constructor() { }
+  constructor() {
+    this.imgUrl = "../../../assets/adds/delivery.png";
+  }
 
   ngOnInit(): void {
   }

@@ -1,13 +1,13 @@
 import 'zone.js/dist/zone-node';
 import 'zone.js/dist/zone-patch-rxjs';
 
-import { ngExpressEngine } from '@nguniversal/express-engine';
+import {ngExpressEngine} from '@nguniversal/express-engine';
 import * as express from 'express';
-import { join } from 'path';
+import {join} from 'path';
 
-import { AppServerModule } from './src/main.server';
-import { APP_BASE_HREF } from '@angular/common';
-import { existsSync } from 'fs';
+import {AppServerModule} from './src/main.server';
+import {APP_BASE_HREF} from '@angular/common';
+import {existsSync} from 'fs';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -44,7 +44,7 @@ function run(): void {
   // Start up the Node server
   const server = app();
   server.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
+    // console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
 

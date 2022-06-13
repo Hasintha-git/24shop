@@ -25,12 +25,10 @@ export class OrderConfirmPageComponentComponent implements OnInit {
   msg: any;
 
   displayedColumns: string[] = ['item', 'price', 'qty', 'subTotal'];
-  // dataSource = ELEMENT_DATA;
   pageSlice: Array<any> = [];
   auth: any;
   constructor(public dialog: MatDialog,private toast: Toast,private router:Router,private itemService: ItemServiceService, private angularAuth: AngularFireAuth) {
 
-    console.log(this.auth);
     this.authUserSet()
 
 
@@ -38,9 +36,7 @@ export class OrderConfirmPageComponentComponent implements OnInit {
 
   async authUserSet() {
     await this.angularAuth.onAuthStateChanged(user => {
-      console.log("hi", user?.uid);
       this.auth = user?.uid
-      console.log(this.auth);
     })
   }
 
@@ -64,19 +60,14 @@ export class OrderConfirmPageComponentComponent implements OnInit {
 
   loadCart() {
     this.itemService.cartList(this.auth).then((res) => {
-      console.log(res, "size");
       sessionStorage.removeItem("search")
       if (res.size == 0) {
         this.msg = "Cart is Empty"
       } else {
         for (let i = 0; i < res.size; i++) {
           this.pageSlice[i] = res.docs[i].data();
-          console.log(this.pageSlice[i].price, "res data ........");
           const itemPrice = parseInt(this.pageSlice[i].price);
           const itemQty = parseInt(this.pageSlice[i].qty);
-
-          console.log(itemPrice, itemQty, "loadddd");
-
           this.total += itemPrice * itemQty;
           this.fullPrice = this.total + this.shipping
 
@@ -87,7 +78,6 @@ export class OrderConfirmPageComponentComponent implements OnInit {
   }
 
   close(row: any) {
-    console.log(row);
     this.itemService.removeCart(row, this.auth).then((res) => {
       window.location.reload()
     })
@@ -101,7 +91,6 @@ export class OrderConfirmPageComponentComponent implements OnInit {
 
   deliveryCost() {
     this.itemService.getdeliveryCost().then((res) => {
-      console.log(res,"res");
       this.shipping=parseInt(res)
       this.fullPrice=this.total+this.shipping
     })
@@ -114,8 +103,6 @@ export class OrderConfirmPageComponentComponent implements OnInit {
       }else{
 
         setTimeout(() => {
-          console.log("time out");
-
           this.openDialog()
         }, 30000);
       }

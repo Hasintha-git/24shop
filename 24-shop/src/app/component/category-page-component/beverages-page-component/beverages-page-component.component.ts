@@ -23,22 +23,15 @@ export class BeveragesPageComponentComponent implements OnInit {
 
 
   loadItems() {
-      console.log("load");
-
     this.itemService.getItem("Beverages").then((res)=> {
-      console.log(res.size,"size");
-
       for (let i = 0; i < res.size; i++) {
-
         this.pageSlice[i]=res.docs[i].data();
-        console.log(this.pageSlice[i],"res");
       }
 
     })
   }
 
   orderSet(list:any) {
-    console.log(list);
     sessionStorage.setItem('buyItem',list.title)
     this.route.navigate(['/order'])
   }

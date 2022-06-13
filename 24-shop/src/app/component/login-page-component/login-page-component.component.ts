@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { Router } from '@angular/router';
-import { RegisterPageComponentComponent } from '../register-page-component/register-page-component.component';
-import { getAuth, setPersistence, inMemoryPersistence, GoogleAuthProvider, signInWithPopup, } from "firebase/auth";
-import { AuthService } from '../shared/auth.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Toast } from 'src/app/services/toast';
-import { MoreDetailsPageComponentComponent } from './additional-data/more-details-page-component/more-details-page-component.component';
+import {Component, OnInit} from '@angular/core';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {Router} from '@angular/router';
+import {RegisterPageComponentComponent} from '../register-page-component/register-page-component.component';
+import {AuthService} from '../shared/auth.service';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Toast} from 'src/app/services/toast';
+import {MoreDetailsPageComponentComponent} from './additional-data/more-details-page-component/more-details-page-component.component';
 
 @Component({
   selector: 'app-login-page-component',
@@ -47,15 +46,12 @@ export class LoginPageComponentComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("onsubmit");
-
     if (this.loginForm.invalid) {
       this.notification.openWarning("Invalid data", "please input valid data")
       return;
 
     }
     this.authService.login(this.loginForm.value.email, this.loginForm.value.password).then((result) => {
-      console.log(result, "submited");
 
     });
 
@@ -64,10 +60,8 @@ export class LoginPageComponentComponent implements OnInit {
   }
 
   logWithGoogle() {
-    console.log("sign in with google");
-    
+
     this.authService.signinWIthGoogle().subscribe((res) => {
-      console.log(res.user.email, res.user.displayName, res.user.uid);
       this.dialogRef.close(LoginPageComponentComponent)
       let dialog = this.dialog.open(MoreDetailsPageComponentComponent);
       dialog.componentInstance.displayName = res.user.displayName;

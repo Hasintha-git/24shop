@@ -27,10 +27,8 @@ export class SearchResultPageComponentComponent implements OnInit {
   }
 
   loadItems(){
-    console.log("load",this.search);
 
     this.itemService.searchItem(this.search).then((res)=> {
-      console.log(res.size,"size");
       if (res.size == 0) {
 
       } else {
@@ -40,7 +38,6 @@ export class SearchResultPageComponentComponent implements OnInit {
       for (let i = 0; i < res.size; i++) {
 
         this.pageSlice[i]=res.docs[i].data();
-        console.log(this.pageSlice[i],"res");
       }
 
     })

@@ -18,16 +18,10 @@ export class SearchBarComponentComponent implements OnInit {
 
   public keyPress = (event: KeyboardEvent) => {
     if (event.key == 'Enter') {
-      console.log(this.search);
       this.valueSet()
     }
 
   }
-
-  // counter() {
-  //   this.route.navigate(['/home'])
-
-  // }
   loadItems() {
     this.valueSet()
   }
