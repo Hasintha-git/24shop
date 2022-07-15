@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run 24-shop:serve-ssr",
-    "serve:ssr": "node dist/24-shop/server/main.js",
+    "serve:ssr": "node dist/24-shop-web/server/main.js",
     "build:ssr": "ng build && ng run 24-shop:server",
     "prerender": "ng run 24-shop:prerender"
   },

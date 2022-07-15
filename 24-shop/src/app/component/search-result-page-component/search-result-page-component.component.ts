@@ -19,7 +19,6 @@ export class SearchResultPageComponentComponent implements OnInit {
 
   constructor(private itemService: ItemServiceService) {
     this.search=sessionStorage.getItem('search')
-
   }
   ngOnInit(): void {
     this.loadItems()
@@ -29,11 +28,6 @@ export class SearchResultPageComponentComponent implements OnInit {
   loadItems(){
 
     this.itemService.searchItem(this.search).then((res)=> {
-      if (res.size == 0) {
-
-      } else {
-
-      }
       sessionStorage.removeItem("search")
       for (let i = 0; i < res.size; i++) {
 

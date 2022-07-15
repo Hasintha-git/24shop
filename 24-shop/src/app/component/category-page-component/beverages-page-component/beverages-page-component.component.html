@@ -14,7 +14,7 @@
         <img  mat-card-image class="imgEffect" src={{num.imgUrl}}>
 
         <mat-card-actions >
-          <mat-card-title>{{num.title}}</mat-card-title>
+          <mat-card-title class="titleTxt">{{num.title}}</mat-card-title>
           <mat-card-subtitle>RS: {{num.price}}</mat-card-subtitle>
             <button class="btnAddCart" mat-button (click)="orderSet(num)">  <mat-icon class="icnCart">shopping_cart</mat-icon>{{num.status=='Active' ? 'Buy Now' : 'Out of Stock'}}</button>
 

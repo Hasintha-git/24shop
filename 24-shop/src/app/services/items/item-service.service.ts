@@ -51,10 +51,25 @@ export class ItemServiceService {
 
   }
 
+    // filter item
+    async filterItem(item: string) {
+      var citiesRef = collection(this.fire, "Items")
+      const querySnapshot = await query(citiesRef, orderBy('title'), startAt(item), endAt(item + "\uf8ff"));
+  
+      const data = await getDocs(querySnapshot)
+  
+      if (data.size == 0) {
+        this.toast.openWarning("Item Not Found", "Wrong input")
+      }
+  
+      return data
+    }
+
   // search item
   async searchItem(item: string) {
     var citiesRef = collection(this.fire, "Items")
-    const querySnapshot = await query(citiesRef, orderBy('title'), startAt(item), endAt(item + "\uf8ff"));
+    // let itemName=item[0].toUpperCase() + item.substr(1).toLowerCase();
+    const querySnapshot = await query(citiesRef, orderBy('title'),where("title", 'array-contains', item), endAt(item + "\uf8ff"));
 
     const data = await getDocs(querySnapshot)
 
@@ -235,5 +250,3 @@ export class ItemServiceService {
 
 
 }
-
-
