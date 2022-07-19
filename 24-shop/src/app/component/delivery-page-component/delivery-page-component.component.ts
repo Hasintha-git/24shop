@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-delivery-page-component',
   templateUrl: './delivery-page-component.component.html',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class DeliveryPageComponentComponent implements OnInit {
   imgUrl:any;
 
-  constructor() {
+  constructor(private route: Router) {
       this.imgUrl="../../../assets/adds/delivery.png";
    }
 
   ngOnInit(): void {
   }
 
+  contact() {
+    this.route.navigate(['/contact'])
+  }
 }

@@ -5,12 +5,13 @@
   margin-top: 20px;
   margin-bottom: 20px;
   box-shadow: none; 
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
   margin-left:auto;
   margin-right:auto;  
   vertical-align:middle;
+  cursor: pointer;
 }
 .card:hover {
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
@@ -80,6 +81,8 @@
     justify-content: flex-end;
     align-items: center;
     text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   .icnCart {
@@ -92,22 +95,22 @@
   align-items: center;
 }
 
-.imgEffect {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.img {
-  width: 90px;
-  height: auto;
-  margin: auto;
-}
+  .imgEffect {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .img {
+    width: 90px;
+    height: auto;
+    margin: auto;
+  }
 
-.titleTxt {
-  height: 50px;
-  width: 100%;
-  overflow: hidden;
-}
+  .titleTxt {
+    height: 60px;
+    width: 100%;
+    overflow: hidden;
+  }

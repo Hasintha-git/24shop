@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ItemServiceService} from 'src/app/services/items/item-service.service';
 
-
 @Component({
   selector: 'app-search-result-page-component',
   templateUrl: './search-result-page-component.component.html',
@@ -14,12 +13,14 @@ export class SearchResultPageComponentComponent implements OnInit {
   price:any;
   oldprice:any;
   pageSlice:Array<any>=[];
-
   search:any;
+
+
 
   constructor(private itemService: ItemServiceService) {
     this.search=sessionStorage.getItem('search')
   }
+
   ngOnInit(): void {
     this.loadItems()
 

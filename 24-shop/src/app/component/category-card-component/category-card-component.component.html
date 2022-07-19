@@ -9,7 +9,7 @@
       <img mat-card-avatar class="img" src={{num.imgUrl}} (click)="goToCategory(num.title)">
     </div>
     <mat-card-actions>
-      <p class="btnAddCart" mat-button>{{num.title}}</p>
+      <p class="btnAddCart" mat-button (click)="goToCategory(num.title)">{{num.title}}</p>
     </mat-card-actions>
 
   </div>

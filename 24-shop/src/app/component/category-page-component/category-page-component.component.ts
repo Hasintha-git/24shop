@@ -15,25 +15,25 @@ export class CategoryPageComponentComponent implements OnInit {
     // this.router.navigate(['/', 'grocery']);
     this.navLinks = [
       {
-        label: 'chilled',
+        label: 'Chilled',
         link: './chilled',
         index: 0
       },
       {
-        label: 'household',
+        label: 'Household',
         link: './household',
         index: 1
       },
       {
-        label: 'grocery',
+        label: 'Grocery',
         link: './grocery',
         index: 2
       }, {
-        label: 'beverages',
+        label: 'Beverages',
         link: './beverages',
         index: 3
       }, {
-        label: 'frozen-food',
+        label: 'Frozen-food',
         link: './frozen-food',
         index: 4
       },

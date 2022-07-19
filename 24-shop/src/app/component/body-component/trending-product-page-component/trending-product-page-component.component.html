@@ -19,7 +19,7 @@
         <mat-card-actions >
 
           <mat-card-title class="titleTxt">{{num.title}}</mat-card-title>
-          <mat-card-subtitle >RS: {{num.price}} </mat-card-subtitle>
+          <mat-card-subtitle >Rs: {{num.price}} </mat-card-subtitle>
           <!-- <mat-card-subtitle >RS: {{num.price}} <span class="disTxt">RS: {{oldprice}}</span></mat-card-subtitle> -->
 
             <button class="btnAddCart" mat-button (click)="orderSet(num)">  <mat-icon class="icnCart">shopping_cart</mat-icon>{{num.status=='Active' ? 'Buy Now' : 'Out of Stock'}}</button>

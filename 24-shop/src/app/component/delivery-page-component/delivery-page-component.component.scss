@@ -32,8 +32,11 @@
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                color: black;
-                font-size: 11px;
+                color: white;
+                font-size: 14px;
+                &:hover {
+                    color: black;
+                }
             }
 
             .txtHeader {

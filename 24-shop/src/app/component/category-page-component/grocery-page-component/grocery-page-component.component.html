@@ -2,30 +2,31 @@
 
 
 
-    <div fxLayout="row wrap"  fxLayout.lt-sm="column wrap" fxLayout.lt-md="column wrap" fxLayoutAlign="center" fxLayoutGap="25px">
-      <div fxFlex="15%"  *ngFor="let num of pageSlice">
-        <mat-card class="mat-elevation-z4 card" data-aos="zoom-in-up">
-          <mat-card-header>
-            <div class="addBtn">
-              <p>{{num.status}}</p>
-            </div>
-          </mat-card-header>
-          <div class="imgEffect">
-            <img  class="img" src={{num.imgUrl}}>
-
+  <div fxLayout="row wrap"  fxLayout.lt-sm="column wrap" fxLayout.lt-md="column wrap" fxLayoutAlign="center" fxLayoutGap="25px">
+    <div fxFlex="15%"  *ngFor="let num of pageSlice">
+      <mat-card class="mat-elevation-z4 card" data-aos="fade-up"  (click)="orderSet(num)"
+      data-aos-anchor-placement="bottom-bottom">
+        <mat-card-header>
+          <div class="addBtn">
+            <p>{{num.status}}</p>
           </div>
-          <mat-card-actions >
+        </mat-card-header>
+        <div class="imgEffect">
+          <img  class="img" src={{num.imgUrl}}>
 
-            <mat-card-title class="titleTxt">{{num.title}}</mat-card-title>
-            <mat-card-subtitle>RS: {{num.price}}</mat-card-subtitle>
-              <button class="btnAddCart" mat-button (click)="orderSet(num)">  <mat-icon class="icnCart">shopping_cart</mat-icon>{{num.status=='Active' ? 'Buy Now' : 'Out of Stock'}}</button>
+        </div>
 
-          </mat-card-actions>
-        </mat-card>
+        <mat-card-actions >
 
 
-      </div>
+          <mat-card-title class="titleTxt">{{num.title}}</mat-card-title>
+          <mat-card-subtitle>Rs: {{num.price}}</mat-card-subtitle>
+            <button class="btnAddCart" mat-button (click)="orderSet(num)">  <mat-icon class="icnCart">shopping_cart</mat-icon>{{num.status=='Active' ? 'Buy Now' : 'Out of Stock'}}</button>
+
+        </mat-card-actions>
+      </mat-card>
+
+
     </div>
+  </div>
 
-
-<!-- </div> -->

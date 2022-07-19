@@ -16,6 +16,13 @@
         
         align-items: center;
     }
+    .mat-tab-link  {
+        color: black;
+        font-weight: bold;
+        padding-left: 0px;
+        padding-right: 0px;
+    
+     }
     
 }
 
@@ -43,4 +50,11 @@
      justify-content: center;
      align-items: center;
     
+ }
+ .mat-tab-link  {
+    color: black;
+    font-weight: bold;
+    padding-left: 70px;
+    padding-right: 70px;
+
  }

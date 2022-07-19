@@ -3,6 +3,10 @@
   color: black;
   text-align: center;
   font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    color: gray;
+  }
 }
 
 mat-card-actions {
@@ -11,8 +15,15 @@ mat-card-actions {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  
 }
 
+.catBg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 mat-card-header {
   display: flex;
   justify-content: flex-start;
