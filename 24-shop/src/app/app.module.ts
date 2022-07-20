@@ -57,6 +57,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { MoreDetailsPageComponentComponent } from './component/login-page-component/additional-data/more-details-page-component/more-details-page-component.component';
 import { NotFoundPageComponentComponent } from './component/not-found-page-component/not-found-page-component.component';
+import { NgAisModule } from 'angular-instantsearch';
 
 @NgModule({
   declarations: [
@@ -120,6 +121,7 @@ import { NotFoundPageComponentComponent } from './component/not-found-page-compo
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    NgAisModule
 
   ],
   providers: [],

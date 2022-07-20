@@ -1,6 +1,6 @@
 <app-search-bar-component></app-search-bar-component>
 <div class="main-div"  *ngFor="let num of currentData"> 
-    <div class="div-1" data-aos="zoom-in-right">
+    <div class="div-1" >
         <div class="imgBox">
             <img class="img" src="{{num.imgUrl}}" alt="">
         </div>
@@ -8,7 +8,7 @@
 
         </div> -->
     </div>
-    <div class="div-2" data-aos="zoom-in-up" >
+    <div class="div-2">
         <div class="boxAdd">
             <p class="txtTitle">{{num.title}}</p>
             <p class="iNo">{{num.status}}</p>
@@ -37,7 +37,7 @@
             <button mat-button class="btnAdCart" (click)="addtoCart(num)">Add to cart</button>
         </div>
     </div>
-    <div class="div-3" data-aos="zoom-in-left">
+    <div class="div-3" >
         <div class="boxHeader">
             <p class="txtHeader">Door Step Delivery</p>
         </div>

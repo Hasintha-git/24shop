@@ -21,7 +21,7 @@ export class HouseholdPageComponentComponent implements OnInit {
   }
 
   loadItems() {
-    this.itemService.getItem("household").then((res)=> {
+    this.itemService.getItem("Household").then((res)=> {
       for (let i = 0; i < res.size; i++) {
 
         this.pageSlice[i]=res.docs[i].data();

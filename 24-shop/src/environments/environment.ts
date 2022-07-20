@@ -13,7 +13,11 @@ firebaseConfig : {
     appId: "1:539569365594:web:65cbf26db89dcdeb94ae63",
     measurementId: "G-45ZVLHQTG5"
   },
-  production: false
+  production: false,
+  algolia : {
+    appId: 'KD5G7HDN2E',
+    apiKey: '7bc2739f641e12bb29f18189119959c6'
+  }
 
 };
 
