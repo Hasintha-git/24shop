@@ -19,9 +19,12 @@ export interface Tile {
 export class AddBanerComponentComponent implements OnInit {
   currentIndex = 0;
   slides = [
-    {image: '../../../../assets/banners/vegitable.png', description: 'Image 01'},
-    {image: '../../../../assets/banners/delivery.png', description: 'Image 03'},
-    {image: '../../../../assets/banners/spicy.png', description: 'Image 04'},
+    // {image: '../../../../assets/banners/vegitable.png', description: 'Image 01'},
+    // {image: '../../../../assets/banners/delivery.png', description: 'Image 03'},
+    // {image: '../../../../assets/banners/spicy.png', description: 'Image 04'},
+    {image: '../../../../assets/adds/01.jpg', description: 'Image 01'},
+    {image: '../../../../assets/adds/02.jpg', description: 'Image 03'},
+    {image: '../../../../assets/adds/03.jpg', description: 'Image 03'},
   ];
 
 

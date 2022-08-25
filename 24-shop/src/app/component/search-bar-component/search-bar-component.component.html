@@ -1,21 +1,21 @@
 <mat-toolbar class="div"> 
     <div class="searchBox">
-        <!-- <div class="box1">
+        <div class="box1">
             <div class="searchTxtBox">
      
 
-                <input type="text" class="input" [(ngModel)]="search" (keypress)="keyPress($event)" autofocus placeholder="search 24 shop">
+                <input type="text" class="input" (click)="valueSet()" [(ngModel)]="search" autofocus placeholder="search 24 shop">
 
-                
+           
                   
             </div>
         </div>
-        <div class="box2" (click)="loadItems()">
+        <div class="box2" (click)="valueSet()">
             <span class="searchTxt">Search Product</span>
             <mat-icon matSuffix style="font-size: 1.2em;color: #fff;">search</mat-icon>
             
-        </div> -->
-        <ais-instantsearch [config]="config">
+        </div>
+        <!-- <ais-instantsearch [config]="config">
             <ais-search-box class="input" (change)="onSearch($event)"></ais-search-box>
             <ais-hits *ngIf="showResults">
               <ng-template let-hits="hits">
@@ -26,7 +26,7 @@
                 </ol>
               </ng-template>
             </ais-hits>
-          </ais-instantsearch>
+          </ais-instantsearch> -->
     </div>
 
    

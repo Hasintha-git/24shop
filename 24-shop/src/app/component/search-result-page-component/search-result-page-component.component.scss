@@ -1,9 +1,3 @@
-.divMain {
-  width: 100%;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
 .card {
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -17,6 +11,7 @@
   margin-left:auto;
   margin-right:auto;  
   vertical-align:middle;
+  cursor: pointer;
   
 }
 .card:hover {
@@ -43,6 +38,8 @@
   align-items: center;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+
 }
 
 
@@ -57,6 +54,7 @@
 
   mat-card-subtitle {
     font-size: 16px;
+    font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
   }
 
   .disTxt {
@@ -66,13 +64,14 @@
 
   .addBtn {
     background-color: #5aff15;
-    // background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
     color: white;
     height: 23px;
     width: 60px;
     text-align: center;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
+  font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+
   }
 
   mat-card-actions {
@@ -101,9 +100,10 @@
   justify-content: center;
   align-items: center;
 }
+
 .imgEffect {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,17 +111,121 @@
   overflow: hidden;
 }
 .img {
-  width: 90px;
+  width: 120px;
   height: auto;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    width: 150px;
+  }
 }
-
+.main {
+  flex: 1;
+  background-color: aliceblue;
+}
 .titleTxt {
   height: 60px;
   width: 100%;
   overflow: hidden;
+  font-size: 14px;
+  font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+
+}
+body { font-family: sans-serif; }
+.ais-SearchBox { margin-bottom: 1em }
+
+
+.searched_item {
+  // background-color: rebeccapurple;
+  border-bottom: 1px solid rgba(189, 181, 181, 0.5);
+  height: 37px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    background-color: #00b712;
+    background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+    color: gray;
+    cursor: pointer;
+  }
+  .searchedImg {
+    width: 35px;
+  }
 }
 
 
-body { font-family: sans-serif; }
-.ais-SearchBox { margin-bottom: 1em }
+// **********
+
+
+@media only screen and (max-width: 768px) {
+  .searchTxt {
+      display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+.div {
+ width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 20px;
+}
+
+.searchBox {
+  width: 80%;
+}
+.input{
+  width: 100%;
+  border: none;
+
+}
+
+.box1 {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-bottom-left-radius: 20px;
+}
+.box2 {
+  width: 25%;
+  height: 100%;   
+  background-color: #00b712;
+  background-image: linear-gradient(315deg, #00b712 0%, #5aff15 85%);
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.box2:hover {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  cursor: pointer;
+}
+
+.searchTxtBox {
+  width: 70%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: rebeccapurple;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+.searchTxt {
+  color: white;
+  font-size: 12px;
+}

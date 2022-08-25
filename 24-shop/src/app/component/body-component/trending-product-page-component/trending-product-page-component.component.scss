@@ -38,6 +38,8 @@
   align-items: center;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+
 }
 
 
@@ -52,6 +54,7 @@
 
   mat-card-subtitle {
     font-size: 16px;
+    font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
   }
 
   .disTxt {
@@ -67,6 +70,8 @@
     text-align: center;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
+  font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+
   }
 
   mat-card-actions {
@@ -97,8 +102,8 @@
 }
 
 .imgEffect {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,9 +111,15 @@
   overflow: hidden;
 }
 .img {
-  width: 90px;
+  width: 120px;
   height: auto;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    width: 150px;
+  }
 }
 .main {
   flex: 1;
@@ -118,4 +129,7 @@
   height: 60px;
   width: 100%;
   overflow: hidden;
+  font-size: 14px;
+  font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+
 }

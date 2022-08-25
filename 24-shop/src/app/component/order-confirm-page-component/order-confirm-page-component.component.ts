@@ -23,6 +23,7 @@ export class OrderConfirmPageComponentComponent implements OnInit {
   shipping: any;
   fullPrice: any;
   msg: any;
+  price: any;
 
   displayedColumns: string[] = ['item', 'price', 'qty', 'subTotal'];
   pageSlice: Array<any> = [];
@@ -66,10 +67,13 @@ export class OrderConfirmPageComponentComponent implements OnInit {
       } else {
         for (let i = 0; i < res.size; i++) {
           this.pageSlice[i] = res.docs[i].data();
-          const itemPrice = parseInt(this.pageSlice[i].price);
+          this.price = parseFloat(this.pageSlice[i].price);
           const itemQty = parseInt(this.pageSlice[i].qty);
-          this.total += itemPrice * itemQty;
+          this.total += this.price  * itemQty;
+          console.log(this.total)
           this.fullPrice = this.total + this.shipping
+          console.log(this.fullPrice)
+
 
         }
       }

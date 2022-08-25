@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ItemServiceService} from 'src/app/services/items/item-service.service';
 import algoliasearch from 'algoliasearch/lite';
+import { Router } from '@angular/router';
 
 const searchClient = algoliasearch(
-  'B1G2GM9NG0',
-  'aadef574be1f9252bb48d4ea09b5cfe5'
+  'UBCRDOM8JO',
+  '77916a141ba74163e44aa2f1f6023d9f'
 );
 
 @Component({
@@ -13,10 +14,6 @@ const searchClient = algoliasearch(
   styleUrls: ['./search-result-page-component.component.scss']
 })
 export class SearchResultPageComponentComponent implements OnInit {
-  config = {
-    indexName: 'demo_ecommerce',
-    searchClient
-  };
   
   imgurl:any;
   status:any;
@@ -25,24 +22,38 @@ export class SearchResultPageComponentComponent implements OnInit {
   pageSlice:Array<any>=[];
   search:any;
 
-  showResult=false;
 
+  searchResult: any;
 
-  constructor(private itemService: ItemServiceService) {
+  config = {
+    indexName: '24shop_items',
+    searchClient
+  };
+
+  showResults=false;
+
+  constructor(private itemService: ItemServiceService, private router: Router) {
     this.search=sessionStorage.getItem('search')
   }
 
+  searched(name:any) {
+    console.log(name+"><><><")
+      sessionStorage.setItem('buyItem',name)
+      this.router.navigate(['/order'])
+  }
+ 
   onSearch(q:any){
     if(q.length){
       console.log(true);
       
-      this.showResult=true;
+      this.showResults=true;
     }else {
-      this.showResult=false
+      this.showResults=false
     }
   }
   ngOnInit(): void {
-    this.loadItems()
+    // this.loadItems()
+    
 
   }
 
