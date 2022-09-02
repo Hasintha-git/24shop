@@ -37,7 +37,7 @@ export class TrendingProductPageComponentComponent implements OnInit {
 
   constructor(private itemService: ItemServiceService, private route: Router) {
     this.preloadImages();
-    this.loadTrending()
+    this.loadTrending();
   }
 
   preloadImages() {
@@ -84,7 +84,7 @@ export class TrendingProductPageComponentComponent implements OnInit {
   }
 
   loadTrending(){
-    this.itemService.getTrending(10).then((res)=> {
+    this.itemService.getTrending(14).then((res)=> {
       for (let i = 0; i < res.size; i++) {
 
         this.pageSlice[i]=res.docs[i].data();

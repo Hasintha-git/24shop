@@ -37,14 +37,12 @@ export class SearchResultPageComponentComponent implements OnInit {
   }
 
   searched(name:any) {
-    console.log(name+"><><><")
       sessionStorage.setItem('buyItem',name)
       this.router.navigate(['/order'])
   }
  
   onSearch(q:any){
     if(q.length){
-      console.log(true);
       
       this.showResults=true;
     }else {

@@ -82,7 +82,7 @@
 
 .contacttxt {
     color: #000000;
-    font-size: 12px;
+    font-size: 18px;
     font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 }
 
@@ -134,6 +134,8 @@
 
 .socialIcon {
     color: #000000;
+    font-size: 28px;
+    // width: 25px;
 }
 .socialIcon:hover {
   color: #6e706e;
@@ -175,4 +177,11 @@
     color: #00b712;
     text-align: center;
     font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+}
+
+.img_icon {
+    width: 20px !important;
+    margin: 0;
+    // padding: 0;
+    padding-bottom: 12px;
 }

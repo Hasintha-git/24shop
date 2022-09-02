@@ -70,9 +70,7 @@ export class OrderConfirmPageComponentComponent implements OnInit {
           this.price = parseFloat(this.pageSlice[i].price);
           const itemQty = parseInt(this.pageSlice[i].qty);
           this.total += this.price  * itemQty;
-          console.log(this.total)
           this.fullPrice = this.total + this.shipping
-          console.log(this.fullPrice)
 
 
         }

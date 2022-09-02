@@ -74,7 +74,6 @@ export class ItemServiceService {
 
   // search item
   async searchItem(item: string) {
-    console.log("search")
     var citiesRef = collection(this.fire, "Items")
     // let itemName=item[0].toUpperCase() + item.substr(1).toLowerCase();
     const querySnapshot = await query(citiesRef, where("title", "array-contains" , item));

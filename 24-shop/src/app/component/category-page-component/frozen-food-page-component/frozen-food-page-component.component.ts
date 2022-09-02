@@ -21,8 +21,9 @@ export class FrozenFoodPageComponentComponent implements OnInit {
   }
 
   loadItems() {
-    this.itemService.getItem("Frozen-Food").then((res)=> {
+    this.itemService.getItem("Frozen Food").then((res)=> {
       for (let i = 0; i < res.size; i++) {
+    
         this.pageSlice[i]=res.docs[i].data();
     }
 

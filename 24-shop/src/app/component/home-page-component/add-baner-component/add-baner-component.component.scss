@@ -11,161 +11,32 @@
 }
 
 .side1{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // height: 100%;
+  // width: 100%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // background-color: #5aff15;
   .imgSize {
     width: 70px;
   }
-  .side1Body {
-    width: 60%;
-    height: 60%;
-    justify-content: center;
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
 
-    .description {
-      font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
-    }
-    .welcome {
-      font-size: 48px;
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      color: #00b712;
-      padding-bottom: 20px;
-      line-height: 75px;
-    }
-    .shopbtn {
-      background-color: gray;
-      width: 150px;
-      height: 37px;
-      border: none;
-      color: white;
-      border-radius: 20px;
-      // border-top-left-radius: 20px;
-      // border-bottom-right-radius: 20px;
-      // border-bottom-left-radius: 5px;
-      // border-top-right-radius: 5px;
-    }
-    .shopbtn:hover {
-      background-color: darkgray;
-    }
-    .registrationbtn {
-      // background-color: #00b712;
-      // background-image: linear-gradient(315deg, #5aff15 0%, #00b712 74%);
-      border: 1px solid gray;
-      width: 150px;
-      height: 37px;
-      color: rgb(0, 0, 0);
-      // border-top-left-radius: 20px;
-      // border-bottom-right-radius: 20px;
-      // border-bottom-left-radius: 5px;
-      // border-top-right-radius: 5px;
-      border-radius: 20px;
-    }
-    .registrationbtn:hover {
-      border: none;
-      color: white;
-      background-color: gray;
-    }
-    .welcome_flex {
-      flex: 1;
-      align-items: flex-start;
-      justify-content: flex-start;
-      text-align: start;
-      display: flex;
-      flex-direction: column;
-      // background-color: yellow;
-    }
-    .flexBox {
-      flex: 1;
-      align-items: center;
-      justify-content: flex-start;
-      text-align: start;
-      display: flex;
-    }
-    .flexBox_btn {
-      flex: 1;
-      width: 90%;
-      align-items: center;
-      justify-content: space-between;
-      text-align: center;
-      display: flex;
-      flex-direction: row;
-    }
-    .flexBoxFree {
-      flex: 1;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      display: flex;
-    }
-  }
+}
+.kaluthara_txt {
+  font-weight: bold;
+}
+.shopName {
+  font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+  font-size: 24px;
+  padding-top: 10px;
 }
 @media only screen and (max-width: 1169px) {
 
-  .side1{
-    .side1Body {
-      width: 90%;
-      height: 80%;
-      // background-color: rebeccapurple;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .shopName {
-        font-size: 24px;
-        font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
-      }
-      .welcome {
-        font-size: 24px;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        line-height: 30px;
-      }
-      .welcome_flex {
-        font-size: 28px;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        flex-direction: row;
-        height: 30px;
-      }
-      .shopbtn {
-        background-color: gray;
-      width: 100%;
-      height: 33px;
-      border: none;
-      color: white;
-      border-radius: 20px;
-      }
-      .registrationbtn {
-        display: none;
-      }
-      .flexBox {
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-        text-align: start;
-        display: flex;
-        z-index: 99;
-        width: 90%;
-      }
-      .flexBoxFree {
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        display: flex;
-      }
-      
-    }
-  }
+
 
   .description {
     color: gray;
     font-size: 11px;
-  }
-  .side2 {
-    // padding-top: 20px;
   }
   .slide {
     position: absolute;
@@ -344,125 +215,90 @@
 .ng-tmp {background-color: transparent;}
 
 
+.img_icon {
+  width: 20px !important;
+  margin: 0;
+  // padding: 0;
+  padding-bottom: 12px;
+}
 
 
 
 
-// *****************************
+// ***********************
+.side1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: #5aff15;
+  .side1_mini_box {
+    width: 80%;
+    height: 70%;
+    // background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    .shopName {
+      font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+      font-size: 24px;
+      padding-top: 10px;
+    }
+    .welcome {
+      font-size: 50px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      line-height: 30px;
+    }
+    .description {
+      color: gray;
+      font-size: 11px;
+    }
+    .shopbtn {
+      background-color: gray;
+      width: 150px;
+      height: 37px;
+      border: none;
+      color: white;
+      border-radius: 20px;
+      margin-top: 20px;
+      // border-top-left-radius: 20px;
+      // border-bottom-right-radius: 20px;
+      // border-bottom-left-radius: 5px;
+      // border-top-right-radius: 5px;
+    }
+    .shopbtn:hover {
+      background-color: darkgray;
+    }
+  }
+}
 
+@media only screen and (max-width: 770px) {
+  .side1_mini_box {
+    width: 100%;
+    height: 100% !important;
+  }
+}
 
-// .main_div {
-//   width: 100% !important;
-//   display: flex;
-//   height: 40%;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-//   margin: 0;
-//   padding: 0;
-//   margin-bottom: 20px;
-//   // background-color: rebeccapurple;
+@media only screen and (max-width: 980px) {
+  .welcome {
+    font-size: 36px !important;
 
-//   .main_div_cover {
-//     height: 100%;
-//     width: 100%;
-//     justify-content: center;
-//     align-items: center;
-//     display: flex;
-//     background-color: transparent;
+  }
+}
 
-//     .slider {
-//       height: 100%;
-//       width: 100% !important;
-//       overflow: hidden;
-//       position: relative;
-//       background-color: transparent;
-//       justify-content: center;
-//       align-items: center;
-//       display: flex;
-//       padding: 0;
-//       margin: 0;
+@media only screen and (max-width: 425px) {
+  .shopName {
+    font-size: 18px !important;
+  }
+  .side1_mini_box {
+    width: 95% !important;
+    height: 70%;
 
-//       .response_img {
-//         width: 100% !important;
-//         height: 100%!important;
-//         overflow: hidden;
-//       }
-//     }
-
-//     .slide {
-//       position: absolute;
-//       top: 0;
-//       bottom: 0;
-//       right: 0;
-//       left: 0;
-//       margin: auto;
-//     }
-
-//     .arrow {
-//       position: absolute;
-//       z-index: 1;
-//       display: block;
-//       // top: 50%;
-//       // margin-top: -35px;
-//       width: 36px;
-//       height: 71px;
-//       outline: none !important;
-//       cursor: pointer;
-//       border: none;
-//     }
-
-//     .arrow.prev {
-//       opacity: 0.2;
-//       left: 20px;
-//       font-size: 50px;
-//       transition: 0.2s linear all;
-//     }
-
-//     .arrow.next {
-//       opacity: 0.2;
-//       right: 20px;
-//       font-size: 50px;
-//       transition: 0.2s linear all;
-//     }
-
-//     .arrow.prev:hover {
-//       opacity: 1;
-//     }
-
-//     .arrow.next:hover {
-//       opacity: 1;
-//     }
-
-//   }
-// }
-
-// @media only screen and (max-width: 678px) {
-//   .main_div {
-//     width: 100% !important;
-//     display: flex;
-//     height: 25%;
-//     flex-direction: row;
-//     justify-content: center;
-//     align-items: center;
-//     margin: 0;
-//     padding: 0;
-//     margin-bottom: 20px;
-//     // background-color: rebeccapurple;
-//   }
-// }
-
-// @media only screen and (max-width: 420px) {
-//   .main_div {
-//     width: 100% !important;
-//     display: flex;
-//     height: 22%;
-//     flex-direction: row;
-//     justify-content: center;
-//     align-items: center;
-//     margin: 0;
-//     padding: 0;
-//     margin-bottom: 20px;
-//     // background-color: rebeccapurple;
-//   }
-// }
+  .welcome {
+    font-size: 24px !important;
+  }
+}
+}
