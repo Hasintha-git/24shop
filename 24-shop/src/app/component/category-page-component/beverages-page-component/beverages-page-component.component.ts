@@ -13,17 +13,23 @@ export class BeveragesPageComponentComponent implements OnInit {
   status:any;
   price:any;
   pageSlice:Array<any>=[];
+  count: number;
 
   constructor(private itemService: ItemServiceService, private route: Router) {
-    this.loadItems()
+    this.count=25;
+    this.loadItems();
 
   }
   ngOnInit(): void {
   }
-
+ onScroll(){
+    this.count = this.count+25;
+    this.loadItems();
+    console.log("1")
+  }
 
   loadItems() {
-    this.itemService.getItem("Beverages").then((res)=> {
+    this.itemService.getItem("Beverages",this.count).then((res)=> {
       for (let i = 0; i < res.size; i++) {
         this.pageSlice[i]=res.docs[i].data();
       }

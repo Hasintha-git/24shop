@@ -36,14 +36,17 @@
     "chance": "^1.1.8",
     "express": "^4.15.2",
     "firebase": "^9.8.2",
+    "lodash": "^4.17.21",
     "ng-angular-popup": "^0.1.2",
+    "ngx-loading": "^14.0.0",
     "ngx-scrollbar": "^9.0.2",
+    "ngx-spinner": "^14.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~13.2.3",
+    "@angular-devkit/build-angular": "^13.3.10",
     "@angular/cli": "~13.2.3",
     "@angular/compiler-cli": "~13.2.0",
     "@nguniversal/builders": "^13.0.2",

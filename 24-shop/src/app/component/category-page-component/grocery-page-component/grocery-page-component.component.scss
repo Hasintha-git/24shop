@@ -133,3 +133,24 @@
   font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 
 }
+
+.load-data {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  background-color: #00b712;
+  background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+  cursor: pointer;
+}
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

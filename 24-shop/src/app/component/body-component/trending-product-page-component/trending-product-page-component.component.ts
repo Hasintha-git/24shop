@@ -84,7 +84,7 @@ export class TrendingProductPageComponentComponent implements OnInit {
   }
 
   loadTrending(){
-    this.itemService.getTrending(14).then((res)=> {
+    this.itemService.getTrending(10).then((res)=> {
       for (let i = 0; i < res.size; i++) {
 
         this.pageSlice[i]=res.docs[i].data();

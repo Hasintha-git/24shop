@@ -1,6 +1,3 @@
-<!-- <div class="content"> -->
-
-
 
   <div fxLayout="row wrap"  fxLayout.lt-sm="column wrap" fxLayout.lt-md="column wrap" fxLayoutAlign="center" fxLayoutGap="25px">
     <div fxFlex="15%"  *ngFor="let num of pageSlice">
@@ -29,3 +26,5 @@
     </div>
   </div>
 
+
+  <div class="load-data" (click)="onScroll()">Click to more data</div>

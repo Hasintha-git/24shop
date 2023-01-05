@@ -1,8 +1,6 @@
-<!-- <div class="content"> -->
 
 
-
-  <div fxLayout="row wrap"  fxLayout.lt-sm="column wrap" fxLayout.lt-md="column wrap" fxLayoutAlign="center" fxLayoutGap="25px">
+  <div fxLayout="row wrap"    fxLayout.lt-sm="column wrap" fxLayout.lt-md="column wrap" fxLayoutAlign="center" fxLayoutGap="25px">
     <div fxFlex="15%"  *ngFor="let num of pageSlice">
       <mat-card class="mat-elevation-z4 card"   (click)="orderSet(num)">
         <mat-card-header>
@@ -28,4 +26,5 @@
 
     </div>
   </div>
-
+  <mat-progress-bar *ngIf="isVisible" mode="indeterminate"></mat-progress-bar>
+  <div class="load-data" (click)="onScroll()">Click to more data</div>

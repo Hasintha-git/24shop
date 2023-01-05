@@ -34,9 +34,9 @@ export class ItemServiceService {
 
 
   // get item
-  async getItem(category: string) {
+  async getItem(category: string,count: number) {
     var citiesRef = collection(this.fire, "Items")
-    const querySnapshot = await query(citiesRef, where('category', "==", category));
+    const querySnapshot = await query(citiesRef, where('category', "==", category), limit(count));
 
     const data = await getDocs(querySnapshot)
     return data

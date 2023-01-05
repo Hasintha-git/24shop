@@ -58,6 +58,7 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
 import { MoreDetailsPageComponentComponent } from './component/login-page-component/additional-data/more-details-page-component/more-details-page-component.component';
 import { NotFoundPageComponentComponent } from './component/not-found-page-component/not-found-page-component.component';
 import { NgAisModule } from 'angular-instantsearch';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -121,8 +122,8 @@ import { NgAisModule } from 'angular-instantsearch';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
-    NgAisModule
-
+    NgAisModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

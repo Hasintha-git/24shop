@@ -5,10 +5,10 @@
     <ais-hits>
       <ng-template let-hits="hits" let-insights="insights">
         <div *ngFor="let hit of hits" class="searched_item" (click)=searched(hit.title)>
-          <a >
+          <h1 >
             <ais-highlight attribute="title" [hit]="hit"></ais-highlight>
             
-          </a>
+          </h1>
           <img class="searchedImg" src="{{hit.imgUrl}}" alt="">
         </div>
   
