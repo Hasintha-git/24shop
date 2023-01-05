@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-search-bar-component',
   templateUrl: './search-bar-component.component.html',
@@ -11,24 +12,18 @@ export class SearchBarComponentComponent implements OnInit {
   pageSlice: Array<any> = [];
   searchResult: any;
 
+
+
   constructor(private route:Router) { }
+
 
   ngOnInit(): void {
   }
 
-  public keyPress = (event: KeyboardEvent) => {
-    if (event.key == 'Enter') {
-      this.valueSet()
-    }
 
-  }
-  loadItems() {
-    this.valueSet()
-  }
   valueSet() {
-    sessionStorage.setItem('search',this.search)
     this.route.navigate(['/search/']).then(() => {
-      window.location.reload();
+      // window.location.reload();
     });
   }
 

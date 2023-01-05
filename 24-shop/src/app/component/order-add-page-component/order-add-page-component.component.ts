@@ -49,10 +49,10 @@ export class OrderAddPageComponentComponent implements OnInit {
       this.toast.openInfo("QTY is 0","Please add QTY  ")
     }
   }
-
+ 
   loadSelectedItem(){
     this.title=sessionStorage.getItem('buyItem');
-    this.itemService.searchItem(this.title).then((res)=> {
+    this.itemService.filterItem(this.title).then((res)=> {
       for (let i = 0; i < res.size; i++) {
         this.currentData[i]=res.docs[i].data();
       }
@@ -104,4 +104,6 @@ export class OrderAddPageComponentComponent implements OnInit {
   openDialog() {
     this.dialog.open(LoginPageComponentComponent);
   }
+
+
 }

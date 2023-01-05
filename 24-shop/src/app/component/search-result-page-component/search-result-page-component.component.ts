@@ -1,6 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ItemServiceService} from 'src/app/services/items/item-service.service';
+import algoliasearch from 'algoliasearch/lite';
+import { Router } from '@angular/router';
 
+const searchClient = algoliasearch(
+  'UBCRDOM8JO',
+  '77916a141ba74163e44aa2f1f6023d9f'
+);
 
 @Component({
   selector: 'app-search-result-page-component',
@@ -8,32 +14,50 @@ import {ItemServiceService} from 'src/app/services/items/item-service.service';
   styleUrls: ['./search-result-page-component.component.scss']
 })
 export class SearchResultPageComponentComponent implements OnInit {
-
+  
   imgurl:any;
   status:any;
   price:any;
   oldprice:any;
   pageSlice:Array<any>=[];
-
   search:any;
 
-  constructor(private itemService: ItemServiceService) {
-    this.search=sessionStorage.getItem('search')
 
+  searchResult: any;
+
+  config = {
+    indexName: '24shop_items',
+    searchClient
+  };
+
+  showResults=false;
+
+  constructor(private itemService: ItemServiceService, private router: Router) {
+    this.search=sessionStorage.getItem('search')
+  }
+
+  searched(name:any) {
+      sessionStorage.setItem('buyItem',name)
+      this.router.navigate(['/order'])
+  }
+ 
+  onSearch(q:any){
+    if(q.length){
+      
+      this.showResults=true;
+    }else {
+      this.showResults=false
+    }
   }
   ngOnInit(): void {
-    this.loadItems()
+    // this.loadItems()
+    
 
   }
 
   loadItems(){
 
     this.itemService.searchItem(this.search).then((res)=> {
-      if (res.size == 0) {
-
-      } else {
-
-      }
       sessionStorage.removeItem("search")
       for (let i = 0; i < res.size; i++) {
 

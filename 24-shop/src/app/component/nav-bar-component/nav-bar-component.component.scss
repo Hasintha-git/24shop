@@ -19,7 +19,7 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-
+  // font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
 }
 
 .mat-button:hover {
@@ -202,7 +202,6 @@
 }
 
 .activated-route {
-
   &:focus{
     color: gray !important;
   }

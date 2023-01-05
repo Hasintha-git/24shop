@@ -1,6 +1,6 @@
 <app-search-bar-component></app-search-bar-component>
 <div class="main-div"  *ngFor="let num of currentData"> 
-    <div class="div-1" data-aos="zoom-in-right">
+    <div class="div-1" >
         <div class="imgBox">
             <img class="img" src="{{num.imgUrl}}" alt="">
         </div>
@@ -8,7 +8,7 @@
 
         </div> -->
     </div>
-    <div class="div-2" data-aos="zoom-in-up" >
+    <div class="div-2">
         <div class="boxAdd">
             <p class="txtTitle">{{num.title}}</p>
             <p class="iNo">{{num.status}}</p>
@@ -18,7 +18,7 @@
             <p class="txtDes">{{num.description}}</p>
         </div>
         <div class="boxPri">
-            <p class="txtPrice">LKR {{price}}.00</p>
+            <p class="txtPrice">LKR {{price}}</p>
         </div>
         <div class="boxQty">
             <div class="qtyDiv">
@@ -34,22 +34,22 @@
             </div>
         </div>
         <div class="boxBtn">
-            <button mat-button class="btnAdCart" (click)="addtoCart(num)">Add to Cart</button>
+            <button mat-button class="btnAdCart" (click)="addtoCart(num)">Add to cart</button>
         </div>
     </div>
-    <div class="div-3" data-aos="zoom-in-left">
+    <div class="div-3" >
         <div class="boxHeader">
             <p class="txtHeader">Door Step Delivery</p>
         </div>
         <div class="boxDetails">
-            <p>Accept Payment After delivery</p>
-            <p>Shipping Fast</p>
-            <p>Return Accept</p>
+            <p>Accept payment after delivery</p>
+            <p>Shipping fast</p>
+            <p>Return accept</p>
             <p>24 hours delivery</p>
 
         </div>
         <div class="boxPurchase">
-            <button mat-button class="btnPurchase"  [routerLink]="'/orderConfirm'">go to checkout</button>
+            <button mat-button class="btnPurchase"  [routerLink]="'/orderConfirm'">Go to checkout</button>
         </div>
     </div>
 </div>

@@ -19,21 +19,24 @@ import {AngularFireAuth} from '@angular/fire/compat/auth';
 import {Router} from '@angular/router';
 import {Toast} from '../toast';
 import {AngularFirestore} from '@angular/fire/compat/firestore';
-
+// import { environment } from 'src/environments/environment';
+// import {Chance} from  'chance'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemServiceService {
 
+  
   dataCollection: any = [];
   orderDetailsCollection: any = [];
   constructor(private storage: Storage, private fire: Firestore, private angularAuth: AngularFireAuth, private router: Router, private toast: Toast, private angularFire: AngularFirestore) { }
 
+
   // get item
-  async getItem(category: string) {
+  async getItem(category: string,count: number) {
     var citiesRef = collection(this.fire, "Items")
-    const querySnapshot = await query(citiesRef, where('category', "==", category));
+    const querySnapshot = await query(citiesRef, where('category', "==", category), limit(count));
 
     const data = await getDocs(querySnapshot)
     return data
@@ -51,10 +54,29 @@ export class ItemServiceService {
 
   }
 
+    // filter item
+    async filterItem(item: string) {
+      var citiesRef = collection(this.fire, "Items")
+      const querySnapshot = await query(citiesRef, orderBy('title'), startAt(item), endAt(item + "\uf8ff"));
+  
+      const data = await getDocs(querySnapshot)
+  
+      if (data.size == 0) {
+        this.toast.openWarning("Item Not Found", "Wrong input")
+      }
+  
+      return data
+
+
+      // new query**********
+
+    }
+
   // search item
   async searchItem(item: string) {
     var citiesRef = collection(this.fire, "Items")
-    const querySnapshot = await query(citiesRef, orderBy('title'), startAt(item), endAt(item + "\uf8ff"));
+    // let itemName=item[0].toUpperCase() + item.substr(1).toLowerCase();
+    const querySnapshot = await query(citiesRef, where("title", "array-contains" , item));
 
     const data = await getDocs(querySnapshot)
 
@@ -235,5 +257,3 @@ export class ItemServiceService {
 
 
 }
-
-

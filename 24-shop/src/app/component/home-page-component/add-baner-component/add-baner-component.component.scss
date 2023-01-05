@@ -1,6 +1,5 @@
 .divBox {
-
-    background-color:transparent;
+    width: 100%!important;
     display: flex;
     height: 80vh;
     flex-direction: row;
@@ -12,103 +11,32 @@
 }
 
 .side1{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // height: 100%;
+  // width: 100%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // background-color: #5aff15;
   .imgSize {
     width: 70px;
   }
-  .side1Body {
-    width: 60%;
-    height: 80%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    .shopName {
-      font-size: 24px;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-    .welcome {
-      font-size: 44px;
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    }
-    .shopbtn {
-      background-color: #00b712;
-      background-image: linear-gradient(315deg, #5aff15 0%, #00b712 74%);
-      width: 100px;
-      height: 37px;
-      border: none;
-      color: white;
-      border-top-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-      border-bottom-left-radius: 5px;
-      border-top-right-radius: 5px;
-    }
-    .shopbtn:hover {
-      background-color: #00b712;
-      background-image: linear-gradient(315deg, #5aff15 0%, #00b712 74%);
-    }
-    .flexBox {
-      flex: 1;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      display: flex;
-      // background-color: #ed1c94;
-    }
-    .flexBoxFree {
-      flex: 1;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      display: flex;
-    }
-  }
+
 }
-// side1 responsive
+.kaluthara_txt {
+  font-weight: bold;
+}
+.shopName {
+  font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+  font-size: 24px;
+  padding-top: 10px;
+}
 @media only screen and (max-width: 1169px) {
-  .side1{
-    .side1Body {
-      width: 90%;
-      height: 80%;
-      .shopName {
-        font-size: 24px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-      }
-      .welcome {
-        font-size: 28px;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      }
-      .shopbtn {
-        background-color: #00b712;
-        background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
-        width: 100px;
-        height: 33px;
-        border: none;
-        color: white;
-        border-radius: 20px;
-      }
-      .flexBox {
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        display: flex;
-        z-index: 99;
-        // background-color: #ed1c94;
-      }
-      .flexBoxFree {
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        display: flex;
-      }
-      
-    }
+
+
+
+  .description {
+    color: gray;
+    font-size: 11px;
   }
   .slide {
     position: absolute;
@@ -130,7 +58,6 @@
   align-items: center;
   display: flex;
   background-color: transparent;
-  // background-color: rgb(45, 12, 163);
 }
 
 .bannerImg {
@@ -138,7 +65,6 @@
     height: 100%;
     display: flex;
 }
-// side2 responsive
 @media only screen and (max-width: 768px) {
     .divBox {
         flex-direction: column-reverse;
@@ -150,10 +76,9 @@
   }
 
 
-//   slide ******************
 .slider {
     height: 100%;
-    width: 100%;
+    width: 100% !important;
     overflow: hidden;
     position: relative;
     background-color: transparent;
@@ -171,6 +96,7 @@
     right: 0;
     left: 0;
     margin: auto;
+    width: 100%!important;
   }
   
   .arrow {
@@ -183,7 +109,6 @@
     height: 71px;
     outline: none !important;
     cursor: pointer;
-    // background: url(../assets/blank.gif) no-repeat;
     border: none;
   }
   
@@ -191,7 +116,6 @@
     opacity: 0.2;
     left: 20px;
     font-size: 50px;
-    // background-image: url(../assets/paddle_prev_999.png);
     transition: 0.2s linear all;
   }
   
@@ -199,28 +123,20 @@
     opacity: 0.2;
     right: 20px;
     font-size: 50px;
-
-    // background-image: url(../assets/paddle_next_999.png);
     transition: 0.2s linear all;
   }
   
   .arrow.prev:hover {
     opacity: 1;
-    // background-image: url(../assets/paddle_prev_fff.png);
   }
   
   .arrow.next:hover {
     opacity: 1;
-    // background-image: url(../assets/paddle_next_fff.png);
   }
 
   
-// ** social media ******
 .social-links {
   display: flex;
-  // top: 420px;
-  // position: absolute;
-  // left: 100px;
 }
 
 .social-links a {
@@ -297,3 +213,92 @@
 }
 
 .ng-tmp {background-color: transparent;}
+
+
+.img_icon {
+  width: 20px !important;
+  margin: 0;
+  // padding: 0;
+  padding-bottom: 12px;
+}
+
+
+
+
+// ***********************
+.side1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: #5aff15;
+  .side1_mini_box {
+    width: 80%;
+    height: 70%;
+    // background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    .shopName {
+      font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+      font-size: 24px;
+      padding-top: 10px;
+    }
+    .welcome {
+      font-size: 50px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      line-height: 30px;
+    }
+    .description {
+      color: rgb(59, 59, 59);
+      font-size: 11px;
+    }
+    .shopbtn {
+      background-color: gray;
+      width: 150px;
+      height: 37px;
+      border: none;
+      color: white;
+      border-radius: 20px;
+      margin-top: 20px;
+      // border-top-left-radius: 20px;
+      // border-bottom-right-radius: 20px;
+      // border-bottom-left-radius: 5px;
+      // border-top-right-radius: 5px;
+    }
+    .shopbtn:hover {
+      background-color: darkgray;
+    }
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .side1_mini_box {
+    width: 100%;
+    height: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .welcome {
+    font-size: 36px !important;
+
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .shopName {
+    font-size: 18px !important;
+  }
+  .side1_mini_box {
+    width: 95% !important;
+    height: 70%;
+
+  .welcome {
+    font-size: 24px !important;
+  }
+}
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,37 +10,39 @@ import { Router } from '@angular/router';
 export class CategoryPageComponentComponent implements OnInit {
 
   navLinks: any[];
-  activeLinkIndex = -1; 
+  activeLinkIndex = -1;
   constructor(private router: Router) {
     // this.router.navigate(['/', 'grocery']);
     this.navLinks = [
-        {
-            label: 'grocery',
-            link: './grocery',
-            index: 0
-        }, {
-            label: 'beverages',
-            link: './beverages',
-            index: 1
-        }, {
-            label: 'household',
-            link: './household',
-            index: 2
-        }, {
-          label: 'chilled',
-          link: './chilled',
-          index: 3
-      },{
-        label: 'frozen-food',
+      {
+        label: 'Chilled',
+        link: './chilled',
+        index: 0
+      },
+      {
+        label: 'Household',
+        link: './household',
+        index: 1
+      },
+      {
+        label: 'Grocery',
+        link: './grocery',
+        index: 2
+      }, {
+        label: 'Beverages',
+        link: './beverages',
+        index: 3
+      }, {
+        label: 'Frozen-food',
         link: './frozen-food',
         index: 4
-    },
+      },
     ];
-}
-ngOnInit(): void {
-  this.router.events.subscribe((res) => {
+  }
+  ngOnInit(): void {
+    this.router.events.subscribe((res) => {
       this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
-  });
-}
+    });
+  }
 
 }

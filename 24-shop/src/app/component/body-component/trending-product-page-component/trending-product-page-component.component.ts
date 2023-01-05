@@ -37,7 +37,7 @@ export class TrendingProductPageComponentComponent implements OnInit {
 
   constructor(private itemService: ItemServiceService, private route: Router) {
     this.preloadImages();
-    this.loadTrending()
+    this.loadTrending();
   }
 
   preloadImages() {

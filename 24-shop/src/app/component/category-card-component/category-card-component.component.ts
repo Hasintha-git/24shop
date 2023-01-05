@@ -23,7 +23,8 @@ export class CategoryCardComponentComponent implements OnInit {
     this.loadCategory()
   }
   goToCategory(num:any){
-    this.route.navigate(['/category/'+num])
+    
+    this.route.navigate(['/category/'+num.toLowerCase()])
   }
 
   loadCategory(){

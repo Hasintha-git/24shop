@@ -1,0 +1,31 @@
+{
+  "hosting": {
+    "public": "dist/24-shop-web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+      
+    ],
+    "appAssociation": "AUTO",
+    "rewrites": [ {
+      "source": "/search/**", 
+      "dynamicLinks": true
+    },
+    {
+      "source": "**",
+      "destination": "/index.html"
+    }, {
+      "source": "/home/**",
+      "dynamicLinks": true
+    },{
+      "source": "/order/**",
+      "dynamicLinks": true
+    }, {
+      "source": "/category/**",
+      "dynamicLinks": true
+    }  ]
+
+  }
+  
+}

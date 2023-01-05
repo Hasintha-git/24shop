@@ -37,6 +37,7 @@
         .txtTitle {
             font-size: 24px;
             font-weight: bold;
+            font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
         }
         .iNo {
             font-size: 14px;
@@ -57,6 +58,7 @@
         height: auto;
         .txtDes {
             font-size: 12px;
+            font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
         }
     }
     .boxQty {
@@ -96,6 +98,7 @@
                     font-weight: bold;
                     font-size: 18px;
                     text-align: center;
+                    font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
                 }
             }
         }
@@ -104,6 +107,7 @@
         width:  90%;
         height: 50px; 
         .btnAdCart {
+            color: white;
             width: 200px;
             height: 33px;
             border-top-left-radius: 20px;
@@ -111,8 +115,11 @@
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
             background-color: #00b712;
             background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+            font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
             &:hover {
                 box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+                color: black;
+                font-weight: bold;
             }
         }
     }
@@ -137,10 +144,13 @@
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        
 
         .txtHeader {
             font-size: 18px;
             color: rgb(0, 0, 0);
+            font-weight: 500;
+            font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
         }
     }
     .boxDetails {
@@ -153,6 +163,8 @@
         justify-content: center;
         align-items: center;
         border-bottom-right-radius: 20px;
+        font-weight: 500;
+        font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
     }
     .boxPurchase {
         width:  90%;
@@ -161,6 +173,7 @@
         justify-content: center;
         align-items: center;
         .btnPurchase {
+            color: white;
             width: 100%;
             height: 33px;
             border-top-left-radius: 20px;
@@ -168,8 +181,11 @@
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
             background-color: #00b712;
             background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+            font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
             &:hover {
                 box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+                font-weight: bold;
+                color: black;
             }
         }
     }

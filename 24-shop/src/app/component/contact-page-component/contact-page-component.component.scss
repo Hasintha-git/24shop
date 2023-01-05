@@ -3,6 +3,23 @@
   display: flex;
   flex-direction: row;
 
+  .box1_number {
+    width: 300px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:linear-gradient(90deg, #b3ffab 0%, #12fff7 100%);
+    padding-top: 15px;
+    border-radius: 40px;
+    .txtPrice {
+      font-size: 36px;
+      font-weight: bold;
+      color: black;
+      text-align: center;
+    }
+  }
   .div1 {
     flex: 1;
     height: 90vh;
@@ -10,6 +27,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 
     .box1 {
       width: 80%;
@@ -45,17 +63,15 @@
         font-size: 36px;
         font-weight: bold;
         color: #00b712;
+        font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
       }
 
       .txtBody {
+        font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
         color: gray;
       }
 
-      .txtPrice {
-        font-size: 36px;
-        font-weight: bold;
-        color: #333333;
-      }
+
     }
   }
 
@@ -137,6 +153,7 @@ table {
         }
 
         .txtTitle {
+          font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
           font-size: 24px;
           font-weight: bold;
           color: #00b712;
@@ -145,6 +162,7 @@ table {
         .txtBody {
           color: gray;
           font-size: 11px;
+          font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
         }
 
         .txtPrice {
@@ -154,7 +172,13 @@ table {
         }
       }
     }
-
+    .box1_number {
+      width: 200px;
+      height: 60px;
+      .txtPrice {
+        font-size: 20px;
+      }
+    }
     .div2 {
       width: 100%;
       flex-direction: row;
@@ -265,3 +289,4 @@ table {
 .txtHightlight {
   color: #00b712;
 }
+

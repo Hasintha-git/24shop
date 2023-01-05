@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import { count } from 'console';
 import {ItemServiceService} from 'src/app/services/items/item-service.service';
 
 @Component({
@@ -14,16 +15,22 @@ export class ChilledPageComponentComponent implements OnInit {
   price:any;
   oldprice:any;
   pageSlice:Array<any>=[];
+  count:number;
 
   constructor(private itemService: ItemServiceService, private route: Router) {
-    this.loadItems()
+    this.count=25;
+    this.loadItems();
   }
   ngOnInit(): void {
   }
 
-
+  onScroll(){
+    this.count = this.count+25;
+    this.loadItems();
+    console.log("1")
+  }
   loadItems() {
-    this.itemService.getItem("Chilled").then((res)=> {
+    this.itemService.getItem("Chilled",this.count).then((res)=> {
       for (let i = 0; i < res.size; i++) {
         this.pageSlice[i]=res.docs[i].data();
     }

@@ -1,20 +1,24 @@
 .mat-toolbar{
     background-color: #00b712;
     background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
-    height: 40vh;
+    min-height: 40vh;
     color: transparent;
+    display: flex;
     justify-content: space-around;
     z-index: 99;
 }
 .divBox {
     width: 100%;
-
     height: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .side1{
     flex: 1;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     line-break: inherit;
@@ -25,7 +29,8 @@
 }
 .side2{
     flex: 1;
-    // background-color: rgb(41, 15, 187);
+    width: 100%;
+    height: 100%;
     flex-direction: column;
     display: flex;
     justify-content: center;
@@ -36,6 +41,8 @@
 
 .side3{
     flex: 1;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,35 +56,41 @@
     font-weight: bold;
     font-size: 24px;
     text-align-last: left;
+
 }
 .addresstxt {
     color: rgb(0, 0, 0);
     font-size: 12px;
+          font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 }
 .spamClr {
-    color: red;
+    color: black;
+    font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 }
 
 .linktxt {
     color: #000000;
     font-size: 12px;
+    font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 }
 
 .linkTitle {
     font-size: 24px;
     font-weight: bold;
+    font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 }
 
 .contacttxt {
     color: #000000;
-    font-size: 12px;
+    font-size: 18px;
+    font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 }
 
 .followTitle {
     font-size: 24px;
     font-weight: bold;
     text-align-last: right;
-
+    font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 }
 
 .socialDiv {
@@ -121,6 +134,8 @@
 
 .socialIcon {
     color: #000000;
+    font-size: 28px;
+    // width: 25px;
 }
 .socialIcon:hover {
   color: #6e706e;
@@ -132,7 +147,8 @@
         width: 100%;
     }
     .mat-toolbar{
-        height: 100%;
+        height: 120%;
+        padding-top: 20px;
         color: transparent;
 
     }
@@ -161,4 +177,12 @@
 .footerTxt {
     color: #00b712;
     text-align: center;
+    font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+}
+
+.img_icon {
+    width: 20px !important;
+    margin: 0;
+    // padding: 0;
+    padding-bottom: 12px;
 }

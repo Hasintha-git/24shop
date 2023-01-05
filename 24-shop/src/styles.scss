@@ -6,6 +6,7 @@ body { margin: 0; font-family: 'PT Sans', sans-serif; }
 
 ::-webkit-scrollbar {
     width: 0.75em;
+
 }
 
 ::-webkit-scrollbar-track {
@@ -13,7 +14,6 @@ body { margin: 0; font-family: 'PT Sans', sans-serif; }
     border-radius: 100vw;
 
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: #00b712;
     background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
@@ -21,13 +21,8 @@ body { margin: 0; font-family: 'PT Sans', sans-serif; }
 
 }
 
+
 ::-webkit-scrollbar-thumb:hover {
     background-color: #00b712;
     background-image: linear-gradient(315deg, #5aff15 0%, #00b712 74%);
-}
-@supports(scrollbar-color: red blue){
-    * {
-        scrollbar-color: red blue;
-        scrollbar-width: 1em;
-    }
 }

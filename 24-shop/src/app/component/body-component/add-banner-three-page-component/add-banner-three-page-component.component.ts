@@ -19,9 +19,9 @@ export class AddBannerThreePageComponentComponent implements OnInit {
 
   currentIndex = 0;
   slides = [
-    {image: '../../../../assets/adds/cover2.png', description: 'Image 01'},
+    {image: '../../../../assets/adds/ban1.jpg', description: 'Image 01'},
 
-    {image: '../../../../assets/adds/cover1.png', description: 'Image 02'},
+    {image: '../../../../assets/adds/ban2.jpg', description: 'Image 02'},
 
   ];
 
